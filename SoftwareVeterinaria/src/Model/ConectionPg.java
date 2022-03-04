@@ -22,7 +22,7 @@ public class ConectionPg {
     Connection con;
     String url = "jdbc:postgresql://localhost:5432/VeterinariaBD";
     String user = "postgres";
-    String pass = "1234";
+    String pass = "sisalima7";
 
 
     public ConectionPg() {
