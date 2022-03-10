@@ -22,7 +22,7 @@ import javax.imageio.stream.ImageInputStream;
 
 public class ModelProducto extends Productos{
     
-    ConectionPg conexion=new ConectionPg();
+     ConectionPg conexion=new ConectionPg();
     //Variables
     private String sql;
     private byte [] bytea;
