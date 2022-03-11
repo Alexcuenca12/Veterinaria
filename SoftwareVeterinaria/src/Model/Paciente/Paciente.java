@@ -19,7 +19,7 @@ public class Paciente {
     private String id_cliente_m;
     private String nombre_mascota;
     private String raza_mascota;
-    private char sexo_mascota;
+    private String sexo_mascota;
     private String especie_mascota;
     private String color_mascota;
     private Date fecha_nacimiento_mascota;
@@ -29,11 +29,12 @@ public class Paciente {
     private Image foto;
     private FileInputStream img;
     private int largo;
-
+    
+//Constructor con y sin parametros
     public Paciente() {
     }
 
-    public Paciente(String id_mascota, String id_cliente_m, String nombre_mascota, String raza_mascota, char sexo_mascota, String especie_mascota, String color_mascota, Date fecha_nacimiento_mascota, Date fecha_ingreso_mascota, Image foto, FileInputStream img, int largo) {
+    public Paciente(String id_mascota, String id_cliente_m, String nombre_mascota, String raza_mascota, String sexo_mascota, String especie_mascota, String color_mascota, Date fecha_nacimiento_mascota, Date fecha_ingreso_mascota, Image foto, FileInputStream img, int largo) {
         this.id_mascota = id_mascota;
         this.id_cliente_m = id_cliente_m;
         this.nombre_mascota = nombre_mascota;
@@ -47,7 +48,7 @@ public class Paciente {
         this.img = img;
         this.largo = largo;
     }
-
+//Set and Get
     public Image getFoto() {
         return foto;
     }
@@ -71,7 +72,6 @@ public class Paciente {
     public void setLargo(int largo) {
         this.largo = largo;
     }
-   
     /**
      * @return the id_mascota
      */
@@ -131,14 +131,14 @@ public class Paciente {
     /**
      * @return the sexo_mascota
      */
-    public char getSexo_mascota() {
+    public String getSexo_mascota() {
         return sexo_mascota;
     }
 
     /**
      * @param sexo_mascota the sexo_mascota to set
      */
-    public void setSexo_mascota(char sexo_mascota) {
+    public void setSexo_mascota(String sexo_mascota) {
         this.sexo_mascota = sexo_mascota;
     }
 
