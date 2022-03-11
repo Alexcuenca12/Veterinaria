@@ -5,6 +5,10 @@
  */
 package View.MenuPrincipal;
 
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Usuario
@@ -31,9 +35,9 @@ public class LoginVet extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         labelContraseña = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtusuario = new javax.swing.JTextField();
         label_Usuario = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtcontraseña = new javax.swing.JPasswordField();
         btnIniciarSesion = new javax.swing.JButton();
         btnRestablecer = new javax.swing.JButton();
 
@@ -48,14 +52,14 @@ public class LoginVet extends javax.swing.JFrame {
         labelContraseña.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
         labelContraseña.setText("Contraseña");
 
-        jTextField1.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
-        jTextField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
+        txtusuario.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
+        txtusuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
 
         label_Usuario.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
         label_Usuario.setText("Id Usuario");
 
-        jPasswordField1.setFont(new java.awt.Font("Baskerville Old Face", 0, 11)); // NOI18N
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtcontraseña.setFont(new java.awt.Font("Baskerville Old Face", 0, 11)); // NOI18N
+        txtcontraseña.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnIniciarSesion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesión");
@@ -83,9 +87,9 @@ public class LoginVet extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(label_Usuario)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1)
+                                    .addComponent(txtusuario)
                                     .addComponent(labelContraseña)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))))
+                                    .addComponent(txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -99,11 +103,11 @@ public class LoginVet extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(label_Usuario)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelContraseña)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -125,6 +129,37 @@ public class LoginVet extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getBtnIniciarSesion() {
+        return btnIniciarSesion;
+    }
+
+    public void setBtnIniciarSesion(JButton btnIniciarSesion) {
+        this.btnIniciarSesion = btnIniciarSesion;
+    }
+
+    public JButton getBtnRestablecer() {
+        return btnRestablecer;
+    }
+
+    public void setBtnRestablecer(JButton btnRestablecer) {
+        this.btnRestablecer = btnRestablecer;
+    }
+
+    public JPasswordField getTxtcontraseña() {
+        return txtcontraseña;
+    }
+
+    public void setTxtcontraseña(JPasswordField txtcontraseña) {
+        this.txtcontraseña = txtcontraseña;
+    }
+
+    public JTextField getTxtusuario() {
+        return txtusuario;
+    }
+
+    public void setTxtusuario(JTextField txtusuario) {
+        this.txtusuario = txtusuario;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
@@ -132,9 +167,9 @@ public class LoginVet extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel label_Usuario;
+    private javax.swing.JPasswordField txtcontraseña;
+    private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
