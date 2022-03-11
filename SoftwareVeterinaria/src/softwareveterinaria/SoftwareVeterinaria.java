@@ -5,6 +5,10 @@
  */
 package softwareveterinaria;
 
+import Controller.Login.ControllerLogin;
+import Model.Login.Login;
+import View.MenuPrincipal.LoginVet;
+
 /**
  *
  * @author Usuario
@@ -16,6 +20,12 @@ public class SoftwareVeterinaria {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        LoginVet vista = new  LoginVet();
+        Login model= new Login();
+        vista.setVisible(true);
+        
+        ControllerLogin controller= new ControllerLogin(vista,model);
+        controller.IniciarControl();
     }
     
 }
