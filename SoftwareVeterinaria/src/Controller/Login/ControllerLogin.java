@@ -18,16 +18,13 @@ public class ControllerLogin {
     
     private LoginVet vistalogin;
     private Login modelologin;
-    
-    
-    
+
     public ControllerLogin(LoginVet vistalogin, Login modelologin) {
         this.vistalogin = vistalogin;
         this.modelologin = modelologin;
        
     }
-    
-    
+
     public void IniciarControl(){
         vistalogin.getBtnIniciarSesion().addActionListener(l->Entrar());
         vistalogin.getBtnRestablecer().addActionListener(l->Restablecer());
