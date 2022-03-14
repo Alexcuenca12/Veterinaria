@@ -73,14 +73,33 @@ public class ModelServicios extends Servicios {
     
     public boolean eliminarPaciente(String id_servicio) {
         String sql;
-        sql = "DELETE FROM SERVICIO WHERE id_servicio='" +  id_servicio + "';";
+        sql = "DELETE FROM servicio WHERE id_servicio='" +  id_servicio + "';";
         return conection.accion(sql);
     }
     
-    public void Buscar(){
-        
-        
-        
+     public ArrayList<Servicios> busquedaPaciente(String criterio) {
+        try {
+            ArrayList<Servicios> listaservicio = new ArrayList<>();
+            String sql = "SELECT * FROM servicio WHERE UPPER (nombre_servicio) like UPPER ('%" + criterio + "%')";
+            ResultSet rs = conection.consulta(sql);
+
+            while (rs.next()) {
+                Servicios servicio = new Servicios();
+                servicio.setId_servicio(rs.getString("id_mascota"));
+                servicio.setNombre_servi(rs.getString("nombre_servicio"));
+                servicio.setCosto_servi(rs.getDouble("costo_servicio"));
+                servicio.setDescripcion(rs.getString("descripcion"));
+                
+                
+                listaservicio.add(servicio);
+
+            }
+            rs.close();
+            return listaservicio;
+        } catch (SQLException ex) {
+            Logger.getLogger(ModelServicios.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
  
 }
