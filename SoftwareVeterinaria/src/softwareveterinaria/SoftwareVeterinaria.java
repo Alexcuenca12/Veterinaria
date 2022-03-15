@@ -5,17 +5,27 @@
  */
 package softwareveterinaria;
 
+import Controller.Login.ControllerLogin;
+import Model.Login.Login;
+import View.MenuPrincipal.LoginVet;
+
 /**
  *
- * @author Usuario
+ * @author JOSE DAVID NAULA
  */
 public class SoftwareVeterinaria {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) {    
+        //DECLARACION Y VISTA DEL LOGIN
+        LoginVet vista = new  LoginVet();
+        Login model= new Login();
+        vista.setVisible(true);
+        // CREACION DEL CONTROLADOR LOGIN
+        ControllerLogin controller= new ControllerLogin(vista,model);
+        controller.IniciarControl();
     }
     
 }
