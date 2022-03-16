@@ -71,13 +71,13 @@ public class ModelServicios extends Servicios {
         
     }
     
-    public boolean eliminarPaciente(String id_servicio) {
+    public boolean eliminarServicio(String id_servicio) {
         String sql;
         sql = "DELETE FROM servicio WHERE id_servicio='" +  id_servicio + "';";
         return conection.accion(sql);
     }
     
-     public ArrayList<Servicios> busquedaPaciente(String criterio) {
+     public ArrayList<Servicios> busquedaServicio(String criterio) {
         try {
             ArrayList<Servicios> listaservicio = new ArrayList<>();
             String sql = "SELECT * FROM servicio WHERE UPPER (nombre_servicio) like UPPER ('%" + criterio + "%')";
