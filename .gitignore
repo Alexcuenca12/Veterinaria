@@ -19,3 +19,5 @@ SoftwareVeterinaria/src/View/MenuPrincipal/MenuPrincipal.java
 SoftwareVeterinaria/nbproject/private/private.xml
 *.xml
 /SoftwareVeterinaria/dist/
+!/SoftwareVeterinaria/src/Model/Clientes/Clientes.java
+!/SoftwareVeterinaria/src/Model/Clientes/ModeloClientes.java
