@@ -7,3 +7,5 @@ SoftwareVeterinaria/src/Model/ConectionPg.java
 SoftwareVeterinaria/nbproject/private/private.xml
 SoftwareVeterinaria/build/*
 SoftwareVeterinaria/nbproject/private/private.properties
+/SoftwareVeterinaria/build/
+/SoftwareVeterinaria/nbproject/
