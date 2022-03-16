@@ -51,8 +51,8 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         bttCrearClie = new javax.swing.JButton();
         bttCancelarClie = new javax.swing.JButton();
-        FechaIngreClie = new com.toedter.calendar.JDateChooser();
         FechaNacimientoClie = new com.toedter.calendar.JDateChooser();
+        FechaIngreClie = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablacliente = new javax.swing.JTable();
         bttAgregarCli = new javax.swing.JButton();
@@ -116,11 +116,11 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
                                         .addComponent(txtApellidoClie)
                                         .addComponent(txtTelefonoClie))))
                             .addGap(71, 71, 71)
-                            .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(dlgClieLayout.createSequentialGroup()
                                     .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(FechaIngreClie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(FechaIngreClie, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(dlgClieLayout.createSequentialGroup()
                                     .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel7)
@@ -131,9 +131,9 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
                                         .addComponent(txtDireccionClie, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(dlgClieLayout.createSequentialGroup()
                                     .addComponent(jLabel6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(FechaNacimientoClie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(FechaNacimientoClie, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         dlgClieLayout.setVerticalGroup(
             dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,14 +169,14 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
                             .addComponent(jLabel5)
                             .addComponent(txtTelefonoClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(dlgClieLayout.createSequentialGroup()
-                        .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
                             .addComponent(FechaIngreClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19)
+                        .addGap(12, 12, 12)
                         .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(FechaNacimientoClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bttCrearClie)
                     .addComponent(bttCancelarClie))
@@ -193,6 +193,7 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tablacliente);
 
+        bttAgregarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/agregar.png"))); // NOI18N
         bttAgregarCli.setText("AGREGAR");
         bttAgregarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,31 +201,42 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
             }
         });
 
+        bttModificarClie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/editar-documento (1).png"))); // NOI18N
         bttModificarClie.setText("MODIFICAR");
 
+        bttEliminarClie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/basura.png"))); // NOI18N
         bttEliminarClie.setText("ELIMINAR");
 
+        bttImprimirClie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/impresion.png"))); // NOI18N
         bttImprimirClie.setText("IMPRIMIR");
+
+        txtBuscarClie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarClieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtBuscarClie, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(bttAgregarCli)
-                        .addGap(18, 18, 18)
-                        .addComponent(bttModificarClie)
-                        .addGap(18, 18, 18)
-                        .addComponent(bttEliminarClie))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 680, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bttImprimirClie)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtBuscarClie, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(bttAgregarCli)
+                                .addGap(18, 18, 18)
+                                .addComponent(bttModificarClie)
+                                .addGap(18, 18, 18)
+                                .addComponent(bttEliminarClie))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(bttImprimirClie)))
+                        .addGap(75, 75, 75)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -236,11 +248,11 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
                     .addComponent(bttAgregarCli)
                     .addComponent(bttModificarClie)
                     .addComponent(bttEliminarClie))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(bttImprimirClie)
-                .addGap(35, 35, 35))
+                .addGap(26, 26, 26))
         );
 
         pack();
@@ -249,6 +261,10 @@ public class VistaCrudPersona extends javax.swing.JInternalFrame {
     private void bttAgregarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttAgregarCliActionPerformed
         
     }//GEN-LAST:event_bttAgregarCliActionPerformed
+
+    private void txtBuscarClieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarClieActionPerformed
 
     public JDateChooser getFechaIngreClie() {
         return FechaIngreClie;
