@@ -88,7 +88,7 @@
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtidservicio" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtnombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -230,13 +230,16 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnRemover" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtBuscar" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -246,22 +249,33 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnIngresar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenesProyecto/Iconos/agregar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="INGRESAR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenesProyecto/Iconos/editar-documento (1).png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnRemover">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenesProyecto/Iconos/basura.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="REMOVER"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="BUSCAR:"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenesProyecto/Iconos/lupa.png"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBuscar">
@@ -344,6 +358,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnimprimir">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagenesProyecto/Iconos/impresion.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="IMPRIMIR"/>
           </Properties>
         </Component>
