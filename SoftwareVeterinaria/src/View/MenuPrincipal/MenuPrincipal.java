@@ -4,6 +4,9 @@
  */
 package View.MenuPrincipal;
 
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author Edison
@@ -17,6 +20,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtnClientes() {
+        return btnClientes;
+    }
+
+    public void setBtnClientes(JButton btnClientes) {
+        this.btnClientes = btnClientes;
+    }
+
+    public JDesktopPane getjDesktop() {
+        return jDesktop;
+    }
+
+    public void setjDesktop(JDesktopPane jDesktop) {
+        this.jDesktop = jDesktop;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +57,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnHospedaje = new javax.swing.JButton();
         btnCitas = new javax.swing.JButton();
         btnServicios = new javax.swing.JButton();
-        lblFondo = new javax.swing.JLabel();
+        jDesktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -132,7 +152,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        lblFondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        javax.swing.GroupLayout jDesktopLayout = new javax.swing.GroupLayout(jDesktop);
+        jDesktop.setLayout(jDesktopLayout);
+        jDesktopLayout.setHorizontalGroup(
+            jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 846, Short.MAX_VALUE)
+        );
+        jDesktopLayout.setVerticalGroup(
+            jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("Clientes");
         jMenuBar1.add(jMenu1);
@@ -169,17 +198,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 802, Short.MAX_VALUE)
-                .addGap(2, 2, 2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDesktop))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jDesktop, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -215,6 +240,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -233,6 +261,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnServicios;
     private javax.swing.JButton btnVeterinarios;
+    private javax.swing.JDesktopPane jDesktop;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -245,7 +274,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
 }

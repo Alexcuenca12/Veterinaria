@@ -5,6 +5,7 @@
 package Model.Clientes;
 
 import Model.ConectionPg;
+import java.awt.event.KeyEvent;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -81,7 +83,7 @@ public class ModeloClientes extends Clientes{
      
      public boolean ModificarClientes() {
         String sql;
-        sql = "update clientes set  id_cliente, nombre_cliente=?, apellido_cliente=?, fechanacimiento=?, telefono=?, email=?, direccion_cliente=?, fechaingreso=?"
+        sql = "update clientes set  nombre_cliente=?, apellido_cliente=?, fechanacimiento=?, telefono=?, email=?, direccion_cliente=?, fechaingreso=?"
                 + "where id_cliente='" + getId_cliente() + "'";
         try {
             PreparedStatement ps = conexion.getCon().prepareStatement(sql);
@@ -92,7 +94,7 @@ public class ModeloClientes extends Clientes{
             ps.setString(5, getEmail());
             ps.setString(6, getDireccion_cliente());
             ps.setDate(7, getFechaingreso());
-            ps.execute();
+            ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
             Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
@@ -100,23 +102,14 @@ public class ModeloClientes extends Clientes{
         }
     }
      
-     public boolean EliminaClientes() {
+     public boolean EliminaClientes(String cedula) {
         String sql;
-        sql = "delete from clientes where id_cliente=?";
-        try {
-            PreparedStatement ps = conexion.getCon().prepareStatement(sql);
-            ps.setString(1, getId_cliente());
-            ps.execute();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
+        sql = "delete from clientes where id_cliente='"+cedula+"';";
+        return conexion.accion(sql);
     }
      
      public ArrayList<Clientes> ListClient_B(String busqueda) {
         ArrayList<Clientes> lista = new ArrayList<>();
-
         try {
             //Sentencia
             String sql = "select * from clientes where id_cliente like'"+busqueda+"%'";
@@ -141,4 +134,5 @@ public class ModeloClientes extends Clientes{
 
         return null;
     }
+    
 }
