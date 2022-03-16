@@ -12,3 +12,10 @@ SoftwareVeterinaria/src/Model/ConectionPg.java
 SoftwareVeterinaria/src/Model/ConectionPg.java
 SoftwareVeterinaria/src/Model/ConectionPg.java
 SoftwareVeterinaria/nbproject/private/private.xml
+/SoftwareVeterinaria/build/
+SoftwareVeterinaria/src/View/MenuPrincipal/MenuPrincipal.form
+SoftwareVeterinaria/src/View/MenuPrincipal/MenuPrincipal.java
+*.java
+SoftwareVeterinaria/nbproject/private/private.xml
+*.xml
+/SoftwareVeterinaria/dist/
