@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JDialog" name="dlgClie">
+    <Container class="javax.swing.JDialog" name="dlg_Vet">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -222,7 +222,7 @@
               </Group>
               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="166" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
               <Component id="btnImprimir_Vet" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
@@ -236,9 +236,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="AGREGAR"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregar_VetActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnModificar_Vet">
       <Properties>

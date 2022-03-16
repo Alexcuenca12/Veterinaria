@@ -5,6 +5,13 @@
  */
 package View.Veterinario;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Usuario
@@ -18,6 +25,126 @@ public class ViewVeterinario extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnAgregar_Vet() {
+        return btnAgregar_Vet;
+    }
+
+    public void setBtnAgregar_Vet(JButton btnAgregar_Vet) {
+        this.btnAgregar_Vet = btnAgregar_Vet;
+    }
+
+    public JButton getBtnCancelar_Vet() {
+        return btnCancelar_Vet;
+    }
+
+    public void setBtnCancelar_Vet(JButton btnCancelar_Vet) {
+        this.btnCancelar_Vet = btnCancelar_Vet;
+    }
+
+    public JButton getBtnCrear_Vet() {
+        return btnCrear_Vet;
+    }
+
+    public void setBtnCrear_Vet(JButton btnCrear_Vet) {
+        this.btnCrear_Vet = btnCrear_Vet;
+    }
+
+    public JButton getBtnEliminar_Vet() {
+        return btnEliminar_Vet;
+    }
+
+    public void setBtnEliminar_Vet(JButton btnEliminar_Vet) {
+        this.btnEliminar_Vet = btnEliminar_Vet;
+    }
+
+    public JButton getBtnImprimir_Vet() {
+        return btnImprimir_Vet;
+    }
+
+    public void setBtnImprimir_Vet(JButton btnImprimir_Vet) {
+        this.btnImprimir_Vet = btnImprimir_Vet;
+    }
+
+    public JButton getBtnModificar_Vet() {
+        return btnModificar_Vet;
+    }
+
+    public void setBtnModificar_Vet(JButton btnModificar_Vet) {
+        this.btnModificar_Vet = btnModificar_Vet;
+    }
+
+    public JComboBox<String> getCb_EspecialidadVet() {
+        return cb_EspecialidadVet;
+    }
+
+    public void setCb_EspecialidadVet(JComboBox<String> cb_EspecialidadVet) {
+        this.cb_EspecialidadVet = cb_EspecialidadVet;
+    }
+
+    public JDialog getDlg_Vet() {
+        return dlg_Vet;
+    }
+
+    public void setDlg_Vet(JDialog dlg_Vet) {
+        this.dlg_Vet = dlg_Vet;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTbl_Veterinario() {
+        return tbl_Veterinario;
+    }
+
+    public void setTbl_Veterinario(JTable tbl_Veterinario) {
+        this.tbl_Veterinario = tbl_Veterinario;
+    }
+
+    public JTextField getTxtApellidoClie() {
+        return txtApellidoClie;
+    }
+
+    public void setTxtApellidoClie(JTextField txtApellidoClie) {
+        this.txtApellidoClie = txtApellidoClie;
+    }
+
+    public JTextField getTxtBuscar_Vet() {
+        return txtBuscar_Vet;
+    }
+
+    public void setTxtBuscar_Vet(JTextField txtBuscar_Vet) {
+        this.txtBuscar_Vet = txtBuscar_Vet;
+    }
+
+    public JTextField getTxtIdClie() {
+        return txtIdClie;
+    }
+
+    public void setTxtIdClie(JTextField txtIdClie) {
+        this.txtIdClie = txtIdClie;
+    }
+
+    public JTextField getTxtNombreClie() {
+        return txtNombreClie;
+    }
+
+    public void setTxtNombreClie(JTextField txtNombreClie) {
+        this.txtNombreClie = txtNombreClie;
+    }
+
+    public JTextField getTxtTelefonoClie() {
+        return txtTelefonoClie;
+    }
+
+    public void setTxtTelefonoClie(JTextField txtTelefonoClie) {
+        this.txtTelefonoClie = txtTelefonoClie;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,7 +154,7 @@ public class ViewVeterinario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dlgClie = new javax.swing.JDialog();
+        dlg_Vet = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,82 +195,77 @@ public class ViewVeterinario extends javax.swing.JInternalFrame {
 
         cb_EspecialidadVet.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Selecione-", "Cirugía.", "Oncología.", "Fisioterapia.", "Rehabilitación.", "Imagenología.", "Fauna Silvestre." }));
 
-        javax.swing.GroupLayout dlgClieLayout = new javax.swing.GroupLayout(dlgClie.getContentPane());
-        dlgClie.getContentPane().setLayout(dlgClieLayout);
-        dlgClieLayout.setHorizontalGroup(
-            dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dlgClieLayout.createSequentialGroup()
+        javax.swing.GroupLayout dlg_VetLayout = new javax.swing.GroupLayout(dlg_Vet.getContentPane());
+        dlg_Vet.getContentPane().setLayout(dlg_VetLayout);
+        dlg_VetLayout.setHorizontalGroup(
+            dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlg_VetLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dlgClieLayout.createSequentialGroup()
-                        .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlgClieLayout.createSequentialGroup()
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dlg_VetLayout.createSequentialGroup()
+                        .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlg_VetLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                                 .addComponent(txtNombreClie, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlgClieLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlg_VetLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtIdClie, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlgClieLayout.createSequentialGroup()
-                                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dlg_VetLayout.createSequentialGroup()
+                                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel4))
                                 .addGap(23, 23, 23)
-                                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtApellidoClie)
                                     .addComponent(txtTelefonoClie)
                                     .addComponent(cb_EspecialidadVet, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(43, Short.MAX_VALUE))
-                    .addGroup(dlgClieLayout.createSequentialGroup()
+                    .addGroup(dlg_VetLayout.createSequentialGroup()
                         .addComponent(btnCrear_Vet)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCancelar_Vet)
                         .addGap(72, 72, 72))))
-            .addGroup(dlgClieLayout.createSequentialGroup()
+            .addGroup(dlg_VetLayout.createSequentialGroup()
                 .addGap(121, 121, 121)
                 .addComponent(jLabel9)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        dlgClieLayout.setVerticalGroup(
-            dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dlgClieLayout.createSequentialGroup()
+        dlg_VetLayout.setVerticalGroup(
+            dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dlg_VetLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtIdClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtNombreClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtApellidoClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtTelefonoClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cb_EspecialidadVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
-                .addGroup(dlgClieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(dlg_VetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCrear_Vet)
                     .addComponent(btnCancelar_Vet))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
         btnAgregar_Vet.setText("AGREGAR");
-        btnAgregar_Vet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregar_VetActionPerformed(evt);
-            }
-        });
 
         btnModificar_Vet.setText("MODIFICAR");
 
@@ -196,17 +318,13 @@ public class ViewVeterinario extends javax.swing.JInternalFrame {
                     .addComponent(btnEliminar_Vet))
                 .addGap(55, 55, 55)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(btnImprimir_Vet)
                 .addGap(35, 35, 35))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAgregar_VetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregar_VetActionPerformed
-
-    }//GEN-LAST:event_btnAgregar_VetActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -217,7 +335,7 @@ public class ViewVeterinario extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnImprimir_Vet;
     private javax.swing.JButton btnModificar_Vet;
     private javax.swing.JComboBox<String> cb_EspecialidadVet;
-    private javax.swing.JDialog dlgClie;
+    private javax.swing.JDialog dlg_Vet;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
