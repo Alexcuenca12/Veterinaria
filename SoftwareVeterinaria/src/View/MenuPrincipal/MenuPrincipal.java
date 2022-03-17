@@ -35,6 +35,63 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public void setjDesktop(JDesktopPane jDesktop) {
         this.jDesktop = jDesktop;
     }
+
+    public JButton getBtnCitas() {
+        return btnCitas;
+    }
+
+    public void setBtnCitas(JButton btnCitas) {
+        this.btnCitas = btnCitas;
+    }
+
+    public JButton getBtnFacturacion() {
+        return btnFacturacion;
+    }
+
+    public void setBtnFacturacion(JButton btnFacturacion) {
+        this.btnFacturacion = btnFacturacion;
+    }
+
+    public JButton getBtnHospedaje() {
+        return btnHospedaje;
+    }
+
+    public void setBtnHospedaje(JButton btnHospedaje) {
+        this.btnHospedaje = btnHospedaje;
+    }
+
+    public JButton getBtnPacientes() {
+        return btnPacientes;
+    }
+
+    public void setBtnPacientes(JButton btnPacientes) {
+        this.btnPacientes = btnPacientes;
+    }
+
+    public JButton getBtnProductos() {
+        return btnProductos;
+    }
+
+    public void setBtnProductos(JButton btnProductos) {
+        this.btnProductos = btnProductos;
+    }
+
+    public JButton getBtnServicios() {
+        return btnServicios;
+    }
+
+    public void setBtnServicios(JButton btnServicios) {
+        this.btnServicios = btnServicios;
+    }
+
+    public JButton getBtnVeterinarios() {
+        return btnVeterinarios;
+    }
+
+    public void setBtnVeterinarios(JButton btnVeterinarios) {
+        this.btnVeterinarios = btnVeterinarios;
+    }
+    
     
     
     /**
