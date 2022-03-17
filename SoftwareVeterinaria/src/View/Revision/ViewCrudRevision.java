@@ -4,6 +4,15 @@
  */
 package View.Revision;
 
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Edison
@@ -26,6 +35,14 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DialogMascota = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tabla_Pacientes = new javax.swing.JTable();
+        jLabel20 = new javax.swing.JLabel();
+        btn_AgregarMas = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        txtBuscar = new javax.swing.JTextField();
+        DialogVeterinario = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtIdfacturaRev = new javax.swing.JTextField();
@@ -76,6 +93,75 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         btnBuscarMed = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
+
+        Tabla_Pacientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "CI Cliente", "Nombre", "Raza", "Sexo", "Especie", "Color", "Fecha Nacimiento", "Fecha Ingreso"
+            }
+        ));
+        jScrollPane2.setViewportView(Tabla_Pacientes);
+
+        jLabel20.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel20.setText("PACIENTES");
+
+        btn_AgregarMas.setText("Añadir");
+
+        jLabel21.setText("BUSCAR:");
+
+        javax.swing.GroupLayout DialogMascotaLayout = new javax.swing.GroupLayout(DialogMascota.getContentPane());
+        DialogMascota.getContentPane().setLayout(DialogMascotaLayout);
+        DialogMascotaLayout.setHorizontalGroup(
+            DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogMascotaLayout.createSequentialGroup()
+                .addGap(357, 357, 357)
+                .addComponent(jLabel20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogMascotaLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addComponent(btn_AgregarMas)
+                .addGap(36, 36, 36))
+            .addGroup(DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DialogMascotaLayout.createSequentialGroup()
+                    .addGap(52, 52, 52)
+                    .addComponent(jScrollPane2)
+                    .addGap(53, 53, 53)))
+        );
+        DialogMascotaLayout.setVerticalGroup(
+            DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogMascotaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                .addGroup(DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_AgregarMas)
+                    .addGroup(DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel21)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
+            .addGroup(DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DialogMascotaLayout.createSequentialGroup()
+                    .addGap(104, 104, 104)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(105, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout DialogVeterinarioLayout = new javax.swing.GroupLayout(DialogVeterinario.getContentPane());
+        DialogVeterinario.getContentPane().setLayout(DialogVeterinarioLayout);
+        DialogVeterinarioLayout.setHorizontalGroup(
+            DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        DialogVeterinarioLayout.setVerticalGroup(
+            DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         jLabel1.setText("ID FACTURA");
 
@@ -210,10 +296,11 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                                     .addComponent(txtEspecieRev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(lblFotoMascotaRev, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(txtColorRev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel12)
+                                .addComponent(txtColorRev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(10, 10, 10)
                         .addComponent(jdcFechaNacRev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel13))
@@ -292,7 +379,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
 
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setText("ID MEDICO");
+        jLabel5.setText("ID VETERINARIO");
 
         jLabel15.setText("NOMBRE");
 
@@ -307,7 +394,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         jButton1.setText("jButton1");
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel19.setText("Médico");
+        jLabel19.setText("Veterinario");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -406,14 +493,481 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public void setjLabel21(JLabel jLabel21) {
+        this.jLabel21 = jLabel21;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
+    public JTable getTabla_Pacientes() {
+        return Tabla_Pacientes;
+    }
+
+    public void setTabla_Pacientes(JTable Tabla_Pacientes) {
+        this.Tabla_Pacientes = Tabla_Pacientes;
+    }
+
+    public JButton getBtn_AgregarMas() {
+        return btn_AgregarMas;
+    }
+
+    public void setBtn_AgregarMas(JButton btn_AgregarMas) {
+        this.btn_AgregarMas = btn_AgregarMas;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JDialog getDialogMascota() {
+        return DialogMascota;
+    }
+
+    public void setDialogMascota(JDialog DialogMascota) {
+        this.DialogMascota = DialogMascota;
+    }
+
+    public JDialog getDialogVeterinario() {
+        return DialogVeterinario;
+    }
+
+    public void setDialogVeterinario(JDialog DialogVeterinario) {
+        this.DialogVeterinario = DialogVeterinario;
+    }
+
+    public JTable getTablaRev() {
+        return TablaRev;
+    }
+
+    public void setTablaRev(JTable TablaRev) {
+        this.TablaRev = TablaRev;
+    }
+
+    public JButton getBtnAgregarRev() {
+        return btnAgregarRev;
+    }
+
+    public void setBtnAgregarRev(JButton btnAgregarRev) {
+        this.btnAgregarRev = btnAgregarRev;
+    }
+
+    public JButton getBtnBuscarMasc() {
+        return btnBuscarMasc;
+    }
+
+    public void setBtnBuscarMasc(JButton btnBuscarMasc) {
+        this.btnBuscarMasc = btnBuscarMasc;
+    }
+
+    public JButton getBtnBuscarMed() {
+        return btnBuscarMed;
+    }
+
+    public void setBtnBuscarMed(JButton btnBuscarMed) {
+        this.btnBuscarMed = btnBuscarMed;
+    }
+
+    public JButton getBtnLimpiarRev() {
+        return btnLimpiarRev;
+    }
+
+    public void setBtnLimpiarRev(JButton btnLimpiarRev) {
+        this.btnLimpiarRev = btnLimpiarRev;
+    }
+
+    public JButton getBtnPagarRev() {
+        return btnPagarRev;
+    }
+
+    public void setBtnPagarRev(JButton btnPagarRev) {
+        this.btnPagarRev = btnPagarRev;
+    }
+
+    public JButton getjButton1() {
+        return jButton1;
+    }
+
+    public void setjButton1(JButton jButton1) {
+        this.jButton1 = jButton1;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel16() {
+        return jLabel16;
+    }
+
+    public void setjLabel16(JLabel jLabel16) {
+        this.jLabel16 = jLabel16;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    public void setjLabel18(JLabel jLabel18) {
+        this.jLabel18 = jLabel18;
+    }
+
+    public JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    public void setjLabel19(JLabel jLabel19) {
+        this.jLabel19 = jLabel19;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public void setjTextField3(JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
+
+    public JTextField getjTextField4() {
+        return jTextField4;
+    }
+
+    public void setjTextField4(JTextField jTextField4) {
+        this.jTextField4 = jTextField4;
+    }
+
+    public JTextField getjTextField5() {
+        return jTextField5;
+    }
+
+    public void setjTextField5(JTextField jTextField5) {
+        this.jTextField5 = jTextField5;
+    }
+
+    public JTextField getjTextField6() {
+        return jTextField6;
+    }
+
+    public void setjTextField6(JTextField jTextField6) {
+        this.jTextField6 = jTextField6;
+    }
+
+    public JDateChooser getJdcFechaIngRev() {
+        return jdcFechaIngRev;
+    }
+
+    public void setJdcFechaIngRev(JDateChooser jdcFechaIngRev) {
+        this.jdcFechaIngRev = jdcFechaIngRev;
+    }
+
+    public JDateChooser getJdcFechaNacRev() {
+        return jdcFechaNacRev;
+    }
+
+    public void setJdcFechaNacRev(JDateChooser jdcFechaNacRev) {
+        this.jdcFechaNacRev = jdcFechaNacRev;
+    }
+
+    public JLabel getLblFotoMascotaRev() {
+        return lblFotoMascotaRev;
+    }
+
+    public void setLblFotoMascotaRev(JLabel lblFotoMascotaRev) {
+        this.lblFotoMascotaRev = lblFotoMascotaRev;
+    }
+
+    public JTextField getTxtColorRev() {
+        return txtColorRev;
+    }
+
+    public void setTxtColorRev(JTextField txtColorRev) {
+        this.txtColorRev = txtColorRev;
+    }
+
+    public JTextField getTxtEspecieRev() {
+        return txtEspecieRev;
+    }
+
+    public void setTxtEspecieRev(JTextField txtEspecieRev) {
+        this.txtEspecieRev = txtEspecieRev;
+    }
+
+    public JTextField getTxtFechaRev() {
+        return txtFechaRev;
+    }
+
+    public void setTxtFechaRev(JTextField txtFechaRev) {
+        this.txtFechaRev = txtFechaRev;
+    }
+
+    public JTextField getTxtIdclienteRev() {
+        return txtIdclienteRev;
+    }
+
+    public void setTxtIdclienteRev(JTextField txtIdclienteRev) {
+        this.txtIdclienteRev = txtIdclienteRev;
+    }
+
+    public JTextField getTxtIdfacturaRev() {
+        return txtIdfacturaRev;
+    }
+
+    public void setTxtIdfacturaRev(JTextField txtIdfacturaRev) {
+        this.txtIdfacturaRev = txtIdfacturaRev;
+    }
+
+    public JTextField getTxtIdmascotaRev() {
+        return txtIdmascotaRev;
+    }
+
+    public void setTxtIdmascotaRev(JTextField txtIdmascotaRev) {
+        this.txtIdmascotaRev = txtIdmascotaRev;
+    }
+
+    public JTextField getTxtNombreMRev() {
+        return txtNombreMRev;
+    }
+
+    public void setTxtNombreMRev(JTextField txtNombreMRev) {
+        this.txtNombreMRev = txtNombreMRev;
+    }
+
+    public JTextField getTxtRazaRev() {
+        return txtRazaRev;
+    }
+
+    public void setTxtRazaRev(JTextField txtRazaRev) {
+        this.txtRazaRev = txtRazaRev;
+    }
+
+    public JTextField getTxtSexoRev() {
+        return txtSexoRev;
+    }
+
+    public void setTxtSexoRev(JTextField txtSexoRev) {
+        this.txtSexoRev = txtSexoRev;
+    }
+
+    public JTextField getTxtTotalRev() {
+        return txtTotalRev;
+    }
+
+    public void setTxtTotalRev(JTextField txtTotalRev) {
+        this.txtTotalRev = txtTotalRev;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog DialogMascota;
+    private javax.swing.JDialog DialogVeterinario;
     private javax.swing.JTable TablaRev;
+    private javax.swing.JTable Tabla_Pacientes;
     private javax.swing.JButton btnAgregarRev;
     private javax.swing.JButton btnBuscarMasc;
     private javax.swing.JButton btnBuscarMed;
     private javax.swing.JButton btnLimpiarRev;
     private javax.swing.JButton btnPagarRev;
+    private javax.swing.JButton btn_AgregarMas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -428,6 +982,8 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -439,6 +995,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -448,6 +1005,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser jdcFechaIngRev;
     private com.toedter.calendar.JDateChooser jdcFechaNacRev;
     private javax.swing.JLabel lblFotoMascotaRev;
+    private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtColorRev;
     private javax.swing.JTextField txtEspecieRev;
     private javax.swing.JTextField txtFechaRev;
