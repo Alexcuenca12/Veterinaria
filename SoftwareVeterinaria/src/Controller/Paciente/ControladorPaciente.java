@@ -52,26 +52,26 @@ public class ControladorPaciente {
         if (vista.getDlgPacientes().getName().equals("crear")) {
             //Insertar
             vista.getTxtcodigo().setEnabled(true);
-            String id_mascota=vista.getTxtcodigo().getText(); 
-            String id_cliente_m=vista.getTxtcedula().getText();
-            String nombre_mascota=vista.getTxtNombre().getText();
-            String raza_mascota=vista.getTxtRaza().getText();
+            String id_mascota = vista.getTxtcodigo().getText();
+            String id_cliente_m = vista.getTxtcedula().getText();
+            String nombre_mascota = vista.getTxtNombre().getText();
+            String raza_mascota = vista.getTxtRaza().getText();
             String sexo_mascota;
-            if(vista.getRbMacho().isSelected()){
-                sexo_mascota="Macho";
-            }else{
-                sexo_mascota="Hembra";
+            if (vista.getRbMacho().isSelected()) {
+                sexo_mascota = "Macho";
+            } else {
+                sexo_mascota = "Hembra";
             }
-            String especie_mascota=vista.getCbEspecie().getSelectedItem().toString();
-            String color_mascota=vista.getTxtColor().getText();
+            String especie_mascota = vista.getCbEspecie().getSelectedItem().toString();
+            String color_mascota = vista.getTxtColor().getText();
             int añoN = abs(1900 - vista.getDtNacimiento().getCalendar().get(Calendar.YEAR));
             int mesN = vista.getDtNacimiento().getCalendar().get(Calendar.MONTH);
             int diaN = vista.getDtNacimiento().getCalendar().get(Calendar.DAY_OF_MONTH);
-            Date fecha_nacimiento_mascota= new Date(añoN, mesN, diaN);
+            Date fecha_nacimiento_mascota = new Date(añoN, mesN, diaN);
             int añoI = abs(1900 - vista.getDtIngreso().getCalendar().get(Calendar.YEAR));
             int mesI = vista.getDtIngreso().getCalendar().get(Calendar.MONTH);
             int diaI = vista.getDtIngreso().getCalendar().get(Calendar.DAY_OF_MONTH);
-            Date fecha_ingreso_mascota= new Date(añoI, mesI, diaI);
+            Date fecha_ingreso_mascota = new Date(añoI, mesI, diaI);
 
             ModeloPaciente paciente = new ModeloPaciente();
 
@@ -105,26 +105,26 @@ public class ControladorPaciente {
         } else {
 
             vista.getTxtcodigo().setEnabled(true);
-            String id_mascota=vista.getTxtcodigo().getText(); 
-            String id_cliente_m=vista.getTxtcedula().getText();
-            String nombre_mascota=vista.getTxtNombre().getText();
-            String raza_mascota=vista.getTxtRaza().getText();
+            String id_mascota = vista.getTxtcodigo().getText();
+            String id_cliente_m = vista.getTxtcedula().getText();
+            String nombre_mascota = vista.getTxtNombre().getText();
+            String raza_mascota = vista.getTxtRaza().getText();
             String sexo_mascota;
-            if(vista.getRbMacho().isSelected()){
-                sexo_mascota="Macho";
-            }else{
-                sexo_mascota="Hembra";
+            if (vista.getRbMacho().isSelected()) {
+                sexo_mascota = "Macho";
+            } else {
+                sexo_mascota = "Hembra";
             }
-            String especie_mascota=vista.getCbEspecie().getSelectedItem().toString();
-            String color_mascota=vista.getTxtColor().getText();
+            String especie_mascota = vista.getCbEspecie().getSelectedItem().toString();
+            String color_mascota = vista.getTxtColor().getText();
             int añoN = abs(1900 - vista.getDtNacimiento().getCalendar().get(Calendar.YEAR));
             int mesN = vista.getDtNacimiento().getCalendar().get(Calendar.MONTH);
             int diaN = vista.getDtNacimiento().getCalendar().get(Calendar.DAY_OF_MONTH);
-            Date fecha_nacimiento_mascota= new Date(añoN, mesN, diaN);
+            Date fecha_nacimiento_mascota = new Date(añoN, mesN, diaN);
             int añoI = abs(1900 - vista.getDtIngreso().getCalendar().get(Calendar.YEAR));
             int mesI = vista.getDtIngreso().getCalendar().get(Calendar.MONTH);
             int diaI = vista.getDtIngreso().getCalendar().get(Calendar.DAY_OF_MONTH);
-            Date fecha_ingreso_mascota= new Date(añoI, mesI, diaI);
+            Date fecha_ingreso_mascota = new Date(añoI, mesI, diaI);
 
             ModeloPaciente paciente = new ModeloPaciente();
 
@@ -186,7 +186,7 @@ public class ControladorPaciente {
             }
         }
     }
-    
+
     private void AbrirDialogo(int ce) {
         String tittle = "";
         vista.getDlgPacientes().setLocationRelativeTo(vista);
@@ -255,7 +255,7 @@ public class ControladorPaciente {
         vista.getDtNacimiento().setDate(null);
         vista.getLblFoto().setIcon(new ImageIcon("imagenesProyecto/BLANCO.PNG"));
     }
-    
+
     private void EliminarPac() {
         if (vista.getTabla_Pacientes().getSelectedRow() > -1) {
             ModeloPaciente paciente = new ModeloPaciente();
@@ -269,8 +269,8 @@ public class ControladorPaciente {
             JOptionPane.showMessageDialog(vista, "Seleccion una fila de la tabla");
         }
     }
-    
-        private void CargarPac() {
+
+    private void CargarPac() {
         //Enlace de la tabla con el metodo de las etiquetas
         DefaultTableModel tblmodel;
         tblmodel = (DefaultTableModel) vista.getTabla_Pacientes().getModel();
