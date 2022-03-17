@@ -27,28 +27,20 @@ public class ControllerLogin {
 
     public void IniciarControl(){
         vistalogin.getBtnIniciarSesion().addActionListener(l->Entrar());
-        vistalogin.getBtnRestablecer().addActionListener(l->Restablecer());
-        
-    }
-     public void Entrar(){
-         //FALTA VALIDAR CONTRASEÑA Y USUARIO
-         
-//        if (true) {
-//            String Usuario=vistalogin.getTxtusuario().toString();
-//            String contraseña=vistalogin.getTxtcontraseña().toString();
-//            Login modelologin = new Login();
-//            modelologin.VerificarIngreso(Usuario, contraseña);
-            MenuPrincipal mimenu=new MenuPrincipal();
+
+    }  
+
+    public void Entrar() {
+        String Usuario = vistalogin.getTxtusuario().toString();
+        String contraseña = vistalogin.getTxtcontraseña().toString();
+
+        Login modelologin = new Login();
+        if (modelologin.VerificarIngreso(Usuario, contraseña)) {
+            MenuPrincipal mimenu = new MenuPrincipal();
             mimenu.setVisible(true);
-//            
-//        }else{
-//             JOptionPane.showMessageDialog(vistalogin, "Error intentelo de nuevo");
-//        }
-        
-    }
-    
-    public void Restablecer(){
-        
+            vistalogin.dispose();
+        }
+
     }
     
 }
