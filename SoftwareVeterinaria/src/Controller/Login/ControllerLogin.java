@@ -38,6 +38,7 @@ public class ControllerLogin {
         if (modelologin.VerificarIngreso(Usuario, contraseña)) {
             MenuPrincipal mimenu = new MenuPrincipal();
             mimenu.setVisible(true);
+            vistalogin.dispose();
         }
 
     }
