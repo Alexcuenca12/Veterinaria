@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -43,6 +44,12 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         jLabel21 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         DialogVeterinario = new javax.swing.JDialog();
+        jLabel22 = new javax.swing.JLabel();
+        txtBuscar1 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        btn_AgregarMas1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tbl_Veterinario = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtIdfacturaRev = new javax.swing.JTextField();
@@ -78,18 +85,24 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         btnPagarRev = new javax.swing.JButton();
         btnAgregarRev = new javax.swing.JButton();
         btnLimpiarRev = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Txt_enfermedad = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Txt_Descripcion = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        label_FotoVet = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txt_IDVet = new javax.swing.JTextField();
+        txt_NomVet = new javax.swing.JTextField();
+        txt_ApellidoVet = new javax.swing.JTextField();
+        txt_DireccVet = new javax.swing.JTextField();
+        txt_EspecialidadVet = new javax.swing.JTextField();
         btnBuscarMed = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
@@ -99,7 +112,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "CI Cliente", "Nombre", "Raza", "Sexo", "Especie", "Color", "Fecha Nacimiento", "Fecha Ingreso"
+                "Codigo", "CI Cliente", "Nombre", "Raza", "Sexo", "Especie", "Color", "Fecha Nacimiento", "Fecha Ingreso", "Foto"
             }
         ));
         jScrollPane2.setViewportView(Tabla_Pacientes);
@@ -115,22 +128,22 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         DialogMascota.getContentPane().setLayout(DialogMascotaLayout);
         DialogMascotaLayout.setHorizontalGroup(
             DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DialogMascotaLayout.createSequentialGroup()
-                .addGap(357, 357, 357)
-                .addComponent(jLabel20)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogMascotaLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 278, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_AgregarMas)
                 .addGap(36, 36, 36))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogMascotaLayout.createSequentialGroup()
+                .addContainerGap(496, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(489, 489, 489))
             .addGroup(DialogMascotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(DialogMascotaLayout.createSequentialGroup()
                     .addGap(52, 52, 52)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1015, Short.MAX_VALUE)
                     .addGap(53, 53, 53)))
         );
         DialogMascotaLayout.setVerticalGroup(
@@ -152,18 +165,68 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                     .addContainerGap(105, Short.MAX_VALUE)))
         );
 
+        jLabel22.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel22.setText("VETERINARIO");
+
+        jLabel23.setText("BUSCAR:");
+
+        btn_AgregarMas1.setText("Añadir");
+
+        tbl_Veterinario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID_Veterinario", "Nombre_Veterinario", "Apellido_Veterinario", "Direccion_Veterinario", "Especialidad"
+            }
+        ));
+        jScrollPane3.setViewportView(tbl_Veterinario);
+
         javax.swing.GroupLayout DialogVeterinarioLayout = new javax.swing.GroupLayout(DialogVeterinario.getContentPane());
         DialogVeterinario.getContentPane().setLayout(DialogVeterinarioLayout);
         DialogVeterinarioLayout.setHorizontalGroup(
             DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(DialogVeterinarioLayout.createSequentialGroup()
+                .addGap(282, 282, 282)
+                .addComponent(jLabel22)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogVeterinarioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogVeterinarioLayout.createSequentialGroup()
+                        .addComponent(btn_AgregarMas1)
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogVeterinarioLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DialogVeterinarioLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel23)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         DialogVeterinarioLayout.setVerticalGroup(
             DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogVeterinarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(btn_AgregarMas1)
+                .addContainerGap())
+            .addGroup(DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DialogVeterinarioLayout.createSequentialGroup()
+                    .addContainerGap(288, Short.MAX_VALUE)
+                    .addGroup(DialogVeterinarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel23)
+                        .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap()))
         );
 
-        jLabel1.setText("ID FACTURA");
+        jLabel1.setText("ID REVISION");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Mascota");
@@ -334,29 +397,57 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         btnLimpiarRev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/codigo-limpio.png"))); // NOI18N
         btnLimpiarRev.setText("LIMPIAR");
 
+        Txt_enfermedad.setColumns(20);
+        Txt_enfermedad.setRows(5);
+        jScrollPane4.setViewportView(Txt_enfermedad);
+
+        jLabel24.setText("DESCRIPCIÓN");
+
+        jLabel25.setText("DIAGNÓSTICO");
+
+        Txt_Descripcion.setColumns(20);
+        Txt_Descripcion.setRows(5);
+        jScrollPane5.setViewportView(Txt_Descripcion);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(txtFechaRev, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(txtTotalRev, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPagarRev)
-                .addGap(18, 18, 18)
-                .addComponent(btnAgregarRev)
-                .addGap(18, 18, 18)
-                .addComponent(btnLimpiarRev)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtFechaRev, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtTotalRev, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnPagarRev))
+                                    .addComponent(jLabel24))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnAgregarRev)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnLimpiarRev))
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(415, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +457,13 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtFechaRev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel25))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -375,9 +472,14 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                     .addComponent(btnAgregarRev)
                     .addComponent(btnLimpiarRev))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(448, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(91, 91, 91)))
         );
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        label_FotoVet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel5.setText("ID VETERINARIO");
 
@@ -408,7 +510,7 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel18)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txt_EspecialidadVet, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel5)
@@ -417,15 +519,15 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel17))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_DireccVet, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_ApellidoVet, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_NomVet, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_IDVet, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(btnBuscarMed, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(label_FotoVet, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -446,28 +548,28 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
                         .addGap(2, 2, 2)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_IDVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnBuscarMed))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_NomVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_ApellidoVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_DireccVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_EspecialidadVet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(label_FotoVet, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -493,52 +595,52 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JLabel getjLabel21() {
-        return jLabel21;
+    public JTextArea getTxt_Descripcion() {
+        return Txt_Descripcion;
     }
 
-    public void setjLabel21(JLabel jLabel21) {
-        this.jLabel21 = jLabel21;
+    public void setTxt_Descripcion(JTextArea Txt_Descripcion) {
+        this.Txt_Descripcion = Txt_Descripcion;
     }
 
-    public JTextField getTxtBuscar() {
-        return txtBuscar;
+    public JTextArea getTxt_enfermedad() {
+        return Txt_enfermedad;
     }
 
-    public void setTxtBuscar(JTextField txtBuscar) {
-        this.txtBuscar = txtBuscar;
+    public void setTxt_enfermedad(JTextArea Txt_enfermedad) {
+        this.Txt_enfermedad = Txt_enfermedad;
     }
 
-    public JTable getTabla_Pacientes() {
-        return Tabla_Pacientes;
+    public JLabel getjLabel24() {
+        return jLabel24;
     }
 
-    public void setTabla_Pacientes(JTable Tabla_Pacientes) {
-        this.Tabla_Pacientes = Tabla_Pacientes;
+    public void setjLabel24(JLabel jLabel24) {
+        this.jLabel24 = jLabel24;
     }
 
-    public JButton getBtn_AgregarMas() {
-        return btn_AgregarMas;
+    public JLabel getjLabel25() {
+        return jLabel25;
     }
 
-    public void setBtn_AgregarMas(JButton btn_AgregarMas) {
-        this.btn_AgregarMas = btn_AgregarMas;
+    public void setjLabel25(JLabel jLabel25) {
+        this.jLabel25 = jLabel25;
     }
 
-    public JLabel getjLabel20() {
-        return jLabel20;
+    public JScrollPane getjScrollPane4() {
+        return jScrollPane4;
     }
 
-    public void setjLabel20(JLabel jLabel20) {
-        this.jLabel20 = jLabel20;
+    public void setjScrollPane4(JScrollPane jScrollPane4) {
+        this.jScrollPane4 = jScrollPane4;
     }
 
-    public JScrollPane getjScrollPane2() {
-        return jScrollPane2;
+    public JScrollPane getjScrollPane5() {
+        return jScrollPane5;
     }
 
-    public void setjScrollPane2(JScrollPane jScrollPane2) {
-        this.jScrollPane2 = jScrollPane2;
+    public void setjScrollPane5(JScrollPane jScrollPane5) {
+        this.jScrollPane5 = jScrollPane5;
     }
 
     public JDialog getDialogMascota() {
@@ -563,6 +665,14 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
 
     public void setTablaRev(JTable TablaRev) {
         this.TablaRev = TablaRev;
+    }
+
+    public JTable getTabla_Pacientes() {
+        return Tabla_Pacientes;
+    }
+
+    public void setTabla_Pacientes(JTable Tabla_Pacientes) {
+        this.Tabla_Pacientes = Tabla_Pacientes;
     }
 
     public JButton getBtnAgregarRev() {
@@ -603,6 +713,22 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
 
     public void setBtnPagarRev(JButton btnPagarRev) {
         this.btnPagarRev = btnPagarRev;
+    }
+
+    public JButton getBtn_AgregarMas() {
+        return btn_AgregarMas;
+    }
+
+    public void setBtn_AgregarMas(JButton btn_AgregarMas) {
+        this.btn_AgregarMas = btn_AgregarMas;
+    }
+
+    public JButton getBtn_AgregarMas1() {
+        return btn_AgregarMas1;
+    }
+
+    public void setBtn_AgregarMas1(JButton btn_AgregarMas1) {
+        this.btn_AgregarMas1 = btn_AgregarMas1;
     }
 
     public JButton getjButton1() {
@@ -717,6 +843,38 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         this.jLabel2 = jLabel2;
     }
 
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    public void setjLabel21(JLabel jLabel21) {
+        this.jLabel21 = jLabel21;
+    }
+
+    public JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    public void setjLabel22(JLabel jLabel22) {
+        this.jLabel22 = jLabel22;
+    }
+
+    public JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+    public void setjLabel23(JLabel jLabel23) {
+        this.jLabel23 = jLabel23;
+    }
+
     public JLabel getjLabel3() {
         return jLabel3;
     }
@@ -805,52 +963,20 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    public JTextField getjTextField1() {
-        return jTextField1;
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
     }
 
-    public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
     }
 
-    public JTextField getjTextField2() {
-        return jTextField2;
+    public JScrollPane getjScrollPane3() {
+        return jScrollPane3;
     }
 
-    public void setjTextField2(JTextField jTextField2) {
-        this.jTextField2 = jTextField2;
-    }
-
-    public JTextField getjTextField3() {
-        return jTextField3;
-    }
-
-    public void setjTextField3(JTextField jTextField3) {
-        this.jTextField3 = jTextField3;
-    }
-
-    public JTextField getjTextField4() {
-        return jTextField4;
-    }
-
-    public void setjTextField4(JTextField jTextField4) {
-        this.jTextField4 = jTextField4;
-    }
-
-    public JTextField getjTextField5() {
-        return jTextField5;
-    }
-
-    public void setjTextField5(JTextField jTextField5) {
-        this.jTextField5 = jTextField5;
-    }
-
-    public JTextField getjTextField6() {
-        return jTextField6;
-    }
-
-    public void setjTextField6(JTextField jTextField6) {
-        this.jTextField6 = jTextField6;
+    public void setjScrollPane3(JScrollPane jScrollPane3) {
+        this.jScrollPane3 = jScrollPane3;
     }
 
     public JDateChooser getJdcFechaIngRev() {
@@ -869,12 +995,44 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         this.jdcFechaNacRev = jdcFechaNacRev;
     }
 
+    public JTextField getLabel_FotoVet() {
+        return label_FotoVet;
+    }
+
+    public void setLabel_FotoVet(JTextField label_FotoVet) {
+        this.label_FotoVet = label_FotoVet;
+    }
+
     public JLabel getLblFotoMascotaRev() {
         return lblFotoMascotaRev;
     }
 
     public void setLblFotoMascotaRev(JLabel lblFotoMascotaRev) {
         this.lblFotoMascotaRev = lblFotoMascotaRev;
+    }
+
+    public JTable getTbl_Veterinario() {
+        return tbl_Veterinario;
+    }
+
+    public void setTbl_Veterinario(JTable tbl_Veterinario) {
+        this.tbl_Veterinario = tbl_Veterinario;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
+    public JTextField getTxtBuscar1() {
+        return txtBuscar1;
+    }
+
+    public void setTxtBuscar1(JTextField txtBuscar1) {
+        this.txtBuscar1 = txtBuscar1;
     }
 
     public JTextField getTxtColorRev() {
@@ -957,17 +1115,61 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
         this.txtTotalRev = txtTotalRev;
     }
 
+    public JTextField getTxt_ApellidoVet() {
+        return txt_ApellidoVet;
+    }
+
+    public void setTxt_ApellidoVet(JTextField txt_ApellidoVet) {
+        this.txt_ApellidoVet = txt_ApellidoVet;
+    }
+
+    public JTextField getTxt_DireccVet() {
+        return txt_DireccVet;
+    }
+
+    public void setTxt_DireccVet(JTextField txt_DireccVet) {
+        this.txt_DireccVet = txt_DireccVet;
+    }
+
+    public JTextField getTxt_EspecialidadVet() {
+        return txt_EspecialidadVet;
+    }
+
+    public void setTxt_EspecialidadVet(JTextField txt_EspecialidadVet) {
+        this.txt_EspecialidadVet = txt_EspecialidadVet;
+    }
+
+    public JTextField getTxt_IDVet() {
+        return txt_IDVet;
+    }
+
+    public void setTxt_IDVet(JTextField txt_IDVet) {
+        this.txt_IDVet = txt_IDVet;
+    }
+
+    public JTextField getTxt_NomVet() {
+        return txt_NomVet;
+    }
+
+    public void setTxt_NomVet(JTextField txt_NomVet) {
+        this.txt_NomVet = txt_NomVet;
+    }
+   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog DialogMascota;
     private javax.swing.JDialog DialogVeterinario;
     private javax.swing.JTable TablaRev;
     private javax.swing.JTable Tabla_Pacientes;
+    private javax.swing.JTextArea Txt_Descripcion;
+    private javax.swing.JTextArea Txt_enfermedad;
     private javax.swing.JButton btnAgregarRev;
     private javax.swing.JButton btnBuscarMasc;
     private javax.swing.JButton btnBuscarMed;
     private javax.swing.JButton btnLimpiarRev;
     private javax.swing.JButton btnPagarRev;
     private javax.swing.JButton btn_AgregarMas;
+    private javax.swing.JButton btn_AgregarMas1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -984,6 +1186,10 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -996,16 +1202,16 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private com.toedter.calendar.JDateChooser jdcFechaIngRev;
     private com.toedter.calendar.JDateChooser jdcFechaNacRev;
+    private javax.swing.JTextField label_FotoVet;
     private javax.swing.JLabel lblFotoMascotaRev;
+    private javax.swing.JTable tbl_Veterinario;
     private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtColorRev;
     private javax.swing.JTextField txtEspecieRev;
     private javax.swing.JTextField txtFechaRev;
@@ -1016,5 +1222,10 @@ public class ViewCrudRevision extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtRazaRev;
     private javax.swing.JTextField txtSexoRev;
     private javax.swing.JTextField txtTotalRev;
+    private javax.swing.JTextField txt_ApellidoVet;
+    private javax.swing.JTextField txt_DireccVet;
+    private javax.swing.JTextField txt_EspecialidadVet;
+    private javax.swing.JTextField txt_IDVet;
+    private javax.swing.JTextField txt_NomVet;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,12 +9,19 @@ import Model.Paciente.ModeloPaciente;
 import Model.Paciente.Paciente;
 import Model.Revision.ModelRevision;
 import Model.Veterinario.ModelVeterinario;
+import Model.Veterinario.Veterinario;
 import View.Revision.*;
+import java.awt.Image;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 
@@ -57,7 +64,7 @@ public class ControllerRevision {
             vistaM.getDialogVeterinario().setSize(600, 500);
             vistaM.getDialogVeterinario().setTitle(title);
             vistaM.getDialogVeterinario().setVisible(true);
-            //CargarVeterinario();
+            CargarVeterinario();
         }
     }
 
@@ -74,7 +81,7 @@ public class ControllerRevision {
             //Para calcular la edad de la persona
             Period edad = Period.between(pac.getFecha_nacimiento_mascota().toLocalDate(), LocalDate.now());
             //Agregar a la tabla
-            tblmodel.addRow(new Object[9]);
+            tblmodel.addRow(new Object[10]);
             vistaM.getTabla_Pacientes().setValueAt(pac.getId_mascota(), i.value, 0);
             vistaM.getTabla_Pacientes().setValueAt(pac.getId_cliente_m(), i.value, 1);
             vistaM.getTabla_Pacientes().setValueAt(pac.getNombre_mascota(), i.value, 2);
@@ -84,7 +91,18 @@ public class ControllerRevision {
             vistaM.getTabla_Pacientes().setValueAt(pac.getColor_mascota(), i.value, 6);
             vistaM.getTabla_Pacientes().setValueAt(edad.getYears(), i.value, 7);
             vistaM.getTabla_Pacientes().setValueAt(pac.getFecha_ingreso_mascota(), i.value, 8);
-            i.value++;
+            Image foto = pac.getFoto();
+            if (foto != null) {
+
+                Image nimg = foto.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon icono = new ImageIcon(nimg);
+                DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+                renderer.setIcon(icono);
+                vistaM.getTabla_Pacientes().setValueAt(new JLabel(icono), i.value, 10);
+
+            } else {
+                i.value++;
+            }
 
         });
 
@@ -106,12 +124,88 @@ public class ControllerRevision {
                     vistaM.getTxtColorRev().setText(tablaMas.get(j).getColor_mascota());
                     vistaM.getJdcFechaNacRev().setDate(tablaMas.get(j).getFecha_nacimiento_mascota());
                     vistaM.getJdcFechaIngRev().setDate(tablaMas.get(j).getFecha_ingreso_mascota());
-
+                    if (tablaMas.get(j).getFoto() == null) {
+                        vistaM.getLblFotoMascotaRev().setIcon(null);
+                    } else {
+                        Image in = tablaMas.get(j).getFoto();
+                        Image img = in.getScaledInstance(133, 147, Image.SCALE_SMOOTH);
+                        Icon icono = new ImageIcon(img);
+                        vistaM.getLblFotoMascotaRev().setIcon(icono);
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna persona");
+                    JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
                 }
             }
 
         }
+    }
+
+    public void CargarVeterinario() {
+
+        //Enlace de la tabla con el metodo de las etiquetas
+        DefaultTableModel tblmodel;
+        tblmodel = (DefaultTableModel) vistaM.getTbl_Veterinario().getModel();
+        tblmodel.setNumRows(0);
+
+        ArrayList<Veterinario> tablaVet = modelVet.listVet_busqueda(vistaM.getTxtBuscar().getText());
+        Holder<Integer> i = new Holder<>(0);
+        tablaVet.stream().forEach(pac -> {
+            //Agregar a la tabla
+            tblmodel.addRow(new Object[5]);
+            vistaM.getTbl_Veterinario().setValueAt(pac.getid_medico(), i.value, 0);
+            vistaM.getTbl_Veterinario().setValueAt(pac.getNombre_medico(), i.value, 1);
+            vistaM.getTbl_Veterinario().setValueAt(pac.getApellido_medico(), i.value, 2);
+            vistaM.getTbl_Veterinario().setValueAt(pac.getDireccion_medico(), i.value, 3);
+            vistaM.getTbl_Veterinario().setValueAt(pac.getEspecialidad(), i.value, 4);
+            i.value++;
+
+        });
+
+    }
+
+    public void agregarVeterinario() {
+        int selecc = vistaM.getTbl_Veterinario().getSelectedRow();
+        if (selecc != -1) {
+            String ver = vistaM.getTbl_Veterinario().getValueAt(selecc, 0).toString();
+            List<Veterinario> tablaVet = modelVet.ListVet_completa();
+            for (int j = 0; j < tablaVet.size(); j++) {
+                if (tablaVet.get(j).getid_medico().equals(ver)) {
+                    vistaM.getTxt_IDVet().setText(tablaVet.get(j).getid_medico());
+                    vistaM.getTxt_NomVet().setText(tablaVet.get(j).getNombre_medico());
+                    vistaM.getTxt_ApellidoVet().setText(tablaVet.get(j).getApellido_medico());
+                    vistaM.getTxt_DireccVet().setText(tablaVet.get(j).getDireccion_medico());
+                    vistaM.getTxt_EspecialidadVet().setText(tablaVet.get(j).getEspecialidad());
+
+                } else {
+                    JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
+                }
+            }
+
+        }
+    }
+
+    public void agregarRevision() {
+
+        String idRevision = vistaM.getTxtIdfacturaRev().getText();
+        String idMedico = vistaM.getTxt_IDVet().getText();
+        String idMascota = vistaM.getTxtIdmascotaRev().getText();
+        String fechafac = vistaM.getTxtFechaRev().getText();
+        Date fechaRevision = java.sql.Date.valueOf(fechafac);
+        String diagnostico = vistaM.getTxt_enfermedad().getText();
+        String descripRe = vistaM.getTxt_Descripcion().getText();
+
+        ModelRevision modelRe = new ModelRevision();
+        modelRe.setIdRevision(idRevision);
+        modelRe.setIdMedico(idMedico);
+        modelRe.setIdMascota(idMascota);
+        modelRe.setFecha_revision(fechaRevision);
+        modelRe.setEnfermedad(diagnostico);
+        modelRe.setDescripcion(descripRe);
+        if (modelRe.CrearRevision()) {
+            JOptionPane.showMessageDialog(vistaM, "Revision Guardada satisfactoriamente");
+        } else {
+            JOptionPane.showMessageDialog(vistaM, "No se pudo crear la revision");
+        }
+
     }
 }
