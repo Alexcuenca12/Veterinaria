@@ -6,6 +6,7 @@ package View.MenuPrincipal;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -91,6 +92,64 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public void setBtnVeterinarios(JButton btnVeterinarios) {
         this.btnVeterinarios = btnVeterinarios;
     }
+
+    public JMenuItem getMiClientes() {
+        return miClientes;
+    }
+
+    public void setMiClientes(JMenuItem miClientes) {
+        this.miClientes = miClientes;
+    }
+
+    public JMenuItem getMiPaciente() {
+        return miPaciente;
+    }
+
+    public void setMiPaciente(JMenuItem miPaciente) {
+        this.miPaciente = miPaciente;
+    }
+
+    public JMenuItem getMiProductos() {
+        return miProductos;
+    }
+
+    public void setMiProductos(JMenuItem miProductos) {
+        this.miProductos = miProductos;
+    }
+
+    public JMenuItem getMiServicios() {
+        return miServicios;
+    }
+
+    public void setMiServicios(JMenuItem miServicios) {
+        this.miServicios = miServicios;
+    }
+
+    public JMenuItem getMiVeterinario() {
+        return miVeterinario;
+    }
+
+    public void setMiVeterinario(JMenuItem miVeterinario) {
+        this.miVeterinario = miVeterinario;
+    }
+
+    public JMenuItem getMiCerrarSes() {
+        return miCerrarSes;
+    }
+
+    public void setMiCerrarSes(JMenuItem miCerrarSes) {
+        this.miCerrarSes = miCerrarSes;
+    }
+
+    public JMenuItem getMiRevicion() {
+        return miRevicion;
+    }
+
+    public void setMiRevicion(JMenuItem miRevicion) {
+        this.miRevicion = miRevicion;
+    }
+    
+    
     
     
     
@@ -117,14 +176,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jDesktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        miClientes = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        miPaciente = new javax.swing.JMenuItem();
+        miRevicion = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        miProductos = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        miVeterinario = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
+        miServicios = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
+        miCerrarSes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,30 +290,69 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Clientes");
+
+        miClientes.setText("Menu Clientes");
+        jMenu1.add(miClientes);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Pacientes");
+
+        miPaciente.setText("Menu Pacientes");
+        jMenu2.add(miPaciente);
+
+        miRevicion.setText("Menu Revicion");
+        jMenu2.add(miRevicion);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Producto");
+
+        miProductos.setText("Menu Productos");
+        jMenu3.add(miProductos);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Veterinario");
+
+        miVeterinario.setText("Menu Veterinario");
+        jMenu4.add(miVeterinario);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Facturación");
+
+        jMenuItem4.setText("Menu Facturacion");
+        jMenu5.add(jMenuItem4);
+
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Hospedaje");
+
+        jMenuItem5.setText("Menu Hospedaje");
+        jMenu6.add(jMenuItem5);
+
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Citas");
+
+        jMenuItem6.setText("Menu Citas");
+        jMenu7.add(jMenuItem6);
+
         jMenuBar1.add(jMenu7);
 
         jMenu8.setText("Servicios");
+
+        miServicios.setText("Menu Servicios");
+        jMenu8.add(miServicios);
+
         jMenuBar1.add(jMenu8);
 
         jMenu9.setText("Salir");
+
+        miCerrarSes.setText("Cerrar Sesión");
+        jMenu9.add(miCerrarSes);
+
         jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
@@ -256,7 +364,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktop))
+                .addComponent(jDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,40 +382,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPrincipal().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCitas;
@@ -330,7 +405,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JMenuItem miCerrarSes;
+    private javax.swing.JMenuItem miClientes;
+    private javax.swing.JMenuItem miPaciente;
+    private javax.swing.JMenuItem miProductos;
+    private javax.swing.JMenuItem miRevicion;
+    private javax.swing.JMenuItem miServicios;
+    private javax.swing.JMenuItem miVeterinario;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,6 +34,12 @@ public class ControladorPaciente {
     VistaCrudPaciente vista;
     public JFileChooser jfc;
 
+    public ControladorPaciente(ModeloPaciente model, VistaCrudPaciente vista) {
+        this.model = model;
+        this.vista = vista;
+        vista.setVisible(true);
+    }
+
     public void iniciaControl() {
         vista.getBtnIngresar().addActionListener(l -> AbrirDialogo(1));
         vista.getBtnEditar().addActionListener(l -> AbrirDialogo(2));
