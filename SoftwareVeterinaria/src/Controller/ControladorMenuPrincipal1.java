@@ -6,9 +6,12 @@
 package Controller;
 
 import Controller.Cliente.ControladorCliente;
+//import ControllerProductos.ControladorProductos;
 import Model.Clientes.ModeloClientes;
+import Model.Productos.ModelProducto;
 import View.CrudClientes.VistaCrudPersona;
 import View.MenuPrincipal.MenuPrincipal;
+import View.Productos.VistaCrudProductos;
 
 /**
  *
@@ -27,11 +30,22 @@ public class ControladorMenuPrincipal1 {
         vistaMenu.getBtnClientes().addActionListener(l ->CrudClientes());
         
     }
+    public void iniciaControl2(){
+        vistaMenu.getBtnProductos().addActionListener(l -> CrudProductos()); 
+    }
     public void CrudClientes(){
         ModeloClientes modeloClientes=new ModeloClientes();
         VistaCrudPersona vistaClientes=new VistaCrudPersona();
         vistaMenu.getjDesktop().add(vistaClientes);
         ControladorCliente controlador=new ControladorCliente(modeloClientes, vistaClientes);
         controlador.iniciarControl();
+    }
+    
+    public void CrudProductos(){
+        ModelProducto modeloProductos = new ModelProducto();
+        VistaCrudProductos vistaProductos = new VistaCrudProductos();
+        vistaMenu.getjDesktop().add(vistaProductos);
+        //ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
+        //controladorProductos.iniciaControl2();
     }
 }
