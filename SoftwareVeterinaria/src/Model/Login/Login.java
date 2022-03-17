@@ -15,7 +15,7 @@ public class Login {
         acceso=false;
          try {
             //Sentencia
-            String sql = "Select * from Veterinario where id_medico where id_medico='"+cedula+"' and contraseña='"+"'";
+            String sql = "Select * from Veterinario where id_medico where id_medico='"+cedula+"' and contraseña='"+contraseña+"'";
             ResultSet rs = cpg.consulta(sql);
             if (rs.next()){
                 acceso=true;
