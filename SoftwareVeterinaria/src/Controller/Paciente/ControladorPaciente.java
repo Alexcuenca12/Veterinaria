@@ -46,12 +46,42 @@ public class ControladorPaciente {
         vista.getBtnAceptar().addActionListener(l -> CrearEditMasc());
         vista.getBtnExaminar().addActionListener(l -> ExaminarFoto());
         vista.getBtnRemover().addActionListener(l -> EliminarPac());
+         CargarPac();
         vista.getTxtBuscar().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 CargarPac();
             }
         });
+    }
+
+    private void AbrirDialogo(int ce) {
+        String tittle = "";
+        vista.getDlgPacientes().setLocationRelativeTo(vista);
+        if (ce == 1) {
+            tittle = "Crear";
+            vista.getDlgPacientes().setName("CREAR PACIENTE");
+            vista.getLblTitulo().setText(tittle);
+            vista.getDlgPacientes().setVisible(true);
+            vista.getDlgPacientes().setLocationRelativeTo(vista);
+            vista.getDlgPacientes().setSize(800, 500);
+            vista.getDlgPacientes().setTitle(tittle);
+
+        } else {
+            if (vista.getTabla_Pacientes().getSelectedRow() > -1) {
+                tittle = "Edit";
+                Infomod();
+                vista.getDlgPacientes().setName("EDITAR PACIENTE");
+                vista.getLblTitulo().setText(tittle);
+                vista.getDlgPacientes().setVisible(true);
+                vista.getDlgPacientes().setLocationRelativeTo(vista);
+                vista.getDlgPacientes().setSize(600, 500);
+                vista.getDlgPacientes().setTitle(tittle);
+            } else {
+                JOptionPane.showMessageDialog(vista, "Seleccion una fila de la tabla");
+            }
+        }
+        vista.getDlgPacientes().setTitle(tittle);
     }
 
     private void CrearEditMasc() {
@@ -64,9 +94,9 @@ public class ControladorPaciente {
             String raza_mascota = vista.getTxtRaza().getText();
             String sexo_mascota;
             if (vista.getRbMacho().isSelected()) {
-                sexo_mascota = "Macho";
+                sexo_mascota = "M";
             } else {
-                sexo_mascota = "Hembra";
+                sexo_mascota = "H";
             }
             String especie_mascota = vista.getCbEspecie().getSelectedItem().toString();
             String color_mascota = vista.getTxtColor().getText();
@@ -117,9 +147,9 @@ public class ControladorPaciente {
             String raza_mascota = vista.getTxtRaza().getText();
             String sexo_mascota;
             if (vista.getRbMacho().isSelected()) {
-                sexo_mascota = "Macho";
+                sexo_mascota = "M";
             } else {
-                sexo_mascota = "Hembra";
+                sexo_mascota = "H";
             }
             String especie_mascota = vista.getCbEspecie().getSelectedItem().toString();
             String color_mascota = vista.getTxtColor().getText();
@@ -191,27 +221,6 @@ public class ControladorPaciente {
                 Logger.getLogger(ControladorPaciente.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }
-
-    private void AbrirDialogo(int ce) {
-        String tittle = "";
-        vista.getDlgPacientes().setLocationRelativeTo(vista);
-        if (ce == 1) {
-            tittle = "Crear";
-            vista.getDlgPacientes().setName("CREAR PACIENTE");
-            vista.getDlgPacientes().setVisible(true);
-
-        } else {
-            if (vista.getTabla_Pacientes().getSelectedRow() > -1) {
-                tittle = "Edit";
-                Infomod();
-                vista.getDlgPacientes().setName("EDITAR PACIENTE");
-                vista.getDlgPacientes().setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(vista, "Seleccion una fila de la tabla");
-            }
-        }
-        vista.getDlgPacientes().setTitle(tittle);
     }
 
     private void Infomod() {
@@ -301,6 +310,5 @@ public class ControladorPaciente {
             i.value++;
 
         });
-
     }
 }

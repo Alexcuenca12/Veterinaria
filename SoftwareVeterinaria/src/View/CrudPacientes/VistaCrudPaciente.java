@@ -11,7 +11,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -19,7 +21,7 @@ import javax.swing.JTextField;
  *
  * @author Usuario
  */
-public class VistaCrudPaciente extends javax.swing.JFrame {
+public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
 
     public JDialog getDlgPacientes() {
         return DlgPacientes;
@@ -59,6 +61,14 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
 
     public void setBtnEditar(JButton btnEditar) {
         this.btnEditar = btnEditar;
+    }
+
+    public JButton getBtnExaminar() {
+        return btnExaminar;
+    }
+
+    public void setBtnExaminar(JButton btnExaminar) {
+        this.btnExaminar = btnExaminar;
     }
 
     public JButton getBtnImprimir() {
@@ -115,6 +125,150 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
 
     public void setDtNacimiento(JDateChooser dtNacimiento) {
         this.dtNacimiento = dtNacimiento;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    public void setjLabel12(JLabel jLabel12) {
+        this.jLabel12 = jLabel12;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
     }
 
     public JLabel getLblFoto() {
@@ -205,14 +359,7 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
         this.txtcodigo = txtcodigo;
     }
 
-    public JButton getBtnExaminar() {
-        return btnExaminar;
-    }
-
-    public void setBtnExaminar(JButton btnExaminar) {
-        this.btnExaminar = btnExaminar;
-    }
-    
+   
     /**
      * Creates new form VistaCrudPaciente
      */
@@ -342,17 +489,17 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, -1, -1));
 
         jLabel12.setText("Foto:");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 37, -1, -1));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
 
         lblFoto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.add(lblFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 57, 142, 214));
+        jPanel4.add(lblFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 57, 190, 214));
 
         btnExaminar.setText("Examinar");
-        jPanel4.add(btnExaminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 282, -1, -1));
+        jPanel4.add(btnExaminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel14.setText("DATOS DEL PACIENTE");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 11, -1, -1));
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
         jPanel4.add(dtNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 140, -1));
         jPanel4.add(dtIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 140, -1));
 
@@ -386,7 +533,7 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
         DlgPacientesLayout.setHorizontalGroup(
             DlgPacientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         DlgPacientesLayout.setVerticalGroup(
@@ -400,7 +547,7 @@ public class VistaCrudPaciente extends javax.swing.JFrame {
                 .addGap(8, 8, 8))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnIngresar.setText("INGRESAR");
 

@@ -71,7 +71,7 @@ public class ModelVeterinario extends Veterinario {
     public boolean ModificarVeterinario() {
         String sql;
         sql = "update veterinario set  id_medico, nombre_medico=?, apellido_medico=?, direccion_medico=?, especialidad=?, contraseña=?"
-                + "where id_medioc='" + getid_medico() + "'";
+                + "where id_medico='" + getid_medico() + "'";
         try {
             PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getNombre_medico());

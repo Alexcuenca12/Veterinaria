@@ -16,6 +16,8 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -40,10 +42,22 @@ public class ControllerRevision {
         this.modelo = modelo;
         this.vistaM = vistaM;
         vistaM.setVisible(true);
+        Calendar calendar = new GregorianCalendar();
+        vistaM.getTxtFechaRev().setText("" + calendar.get(Calendar.YEAR) + "-" + calendar.get(Calendar.MONTH) + "-" + calendar.get(Calendar.DAY_OF_MONTH));
+        //vistaM.getTxtIdfacturaRev().setEnabled(false);
     }
 
     public void iniciarControl() {
-
+        vistaM.getBtnBuscarMasc().addActionListener(l -> abrirDialogo(1));
+        vistaM.getBtnBuscarMed().addActionListener(l -> abrirDialogo(2));
+        vistaM.getBtnBuscarMasc().addActionListener(l -> agregarMascota());
+        vistaM.getBtnBuscarMed().addActionListener(l -> agregarVeterinario());
+        vistaM.getBtnBuscarMasc().addActionListener(l -> CargarMascota());
+        vistaM.getBtnBuscarMed().addActionListener(l -> CargarVeterinario());
+        vistaM.getBtn_AgregarMas().addActionListener(l -> agregarMascota());
+        vistaM.getBtn_AgregarMed().addActionListener(l -> agregarVeterinario());
+        //CargarMascota();
+        //CargarVeterinario();
     }
 
     public void abrirDialogo(int ce) {
@@ -53,7 +67,7 @@ public class ControllerRevision {
             title = "Visualizar Mascota";
             vistaM.getDialogMascota().setName("Mascota");
             vistaM.getDialogMascota().setLocationRelativeTo(vistaM);
-            vistaM.getDialogMascota().setSize(600, 500);
+            vistaM.getDialogMascota().setSize(900, 500);
             vistaM.getDialogMascota().setTitle(title);
             vistaM.getDialogMascota().setVisible(true);
             CargarMascota();
@@ -61,7 +75,7 @@ public class ControllerRevision {
             title = "Visualizar Veterinario";
             vistaM.getDialogVeterinario().setName("Veterinario");
             vistaM.getDialogVeterinario().setLocationRelativeTo(vistaM);
-            vistaM.getDialogVeterinario().setSize(600, 500);
+            vistaM.getDialogVeterinario().setSize(800, 400);
             vistaM.getDialogVeterinario().setTitle(title);
             vistaM.getDialogVeterinario().setVisible(true);
             CargarVeterinario();
@@ -70,12 +84,15 @@ public class ControllerRevision {
 
     public void CargarMascota() {
 
+        vistaM.getTabla_Pacientes().setDefaultRenderer(Object.class, new ImagenTabla());
+        vistaM.getTabla_Pacientes().setRowHeight(100);
+
         //Enlace de la tabla con el metodo de las etiquetas
         DefaultTableModel tblmodel;
         tblmodel = (DefaultTableModel) vistaM.getTabla_Pacientes().getModel();
         tblmodel.setNumRows(0);
 
-        ArrayList<Paciente> list = modelPac.busquedaPaciente(vistaM.getTxtBuscar().getText());
+        ArrayList<Paciente> list = modelo.listarPacientes();
         Holder<Integer> i = new Holder<>(0);
         list.stream().forEach(pac -> {
             //Para calcular la edad de la persona
@@ -98,7 +115,7 @@ public class ControllerRevision {
                 ImageIcon icono = new ImageIcon(nimg);
                 DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
                 renderer.setIcon(icono);
-                vistaM.getTabla_Pacientes().setValueAt(new JLabel(icono), i.value, 10);
+                vistaM.getTabla_Pacientes().setValueAt(new JLabel(icono), i.value, 9);
 
             } else {
                 i.value++;
@@ -112,7 +129,7 @@ public class ControllerRevision {
         int selecc = vistaM.getTabla_Pacientes().getSelectedRow();
         if (selecc != -1) {
             String ver = vistaM.getTabla_Pacientes().getValueAt(selecc, 0).toString();
-            List<Paciente> tablaMas = modelPac.listarPacientes();
+            List<Paciente> tablaMas = modelo.listarPacientes();
             for (int j = 0; j < tablaMas.size(); j++) {
                 if (tablaMas.get(j).getId_mascota().equals(ver)) {
                     vistaM.getTxtIdmascotaRev().setText(tablaMas.get(j).getId_mascota());
@@ -147,7 +164,7 @@ public class ControllerRevision {
         tblmodel = (DefaultTableModel) vistaM.getTbl_Veterinario().getModel();
         tblmodel.setNumRows(0);
 
-        ArrayList<Veterinario> tablaVet = modelVet.listVet_busqueda(vistaM.getTxtBuscar().getText());
+        ArrayList<Veterinario> tablaVet = modelo.ListVet_completa();
         Holder<Integer> i = new Holder<>(0);
         tablaVet.stream().forEach(pac -> {
             //Agregar a la tabla
@@ -167,7 +184,7 @@ public class ControllerRevision {
         int selecc = vistaM.getTbl_Veterinario().getSelectedRow();
         if (selecc != -1) {
             String ver = vistaM.getTbl_Veterinario().getValueAt(selecc, 0).toString();
-            List<Veterinario> tablaVet = modelVet.ListVet_completa();
+            List<Veterinario> tablaVet = modelo.ListVet_completa();
             for (int j = 0; j < tablaVet.size(); j++) {
                 if (tablaVet.get(j).getid_medico().equals(ver)) {
                     vistaM.getTxt_IDVet().setText(tablaVet.get(j).getid_medico());

@@ -55,7 +55,7 @@ public class ControladorMenuPrincipal1 {
         vistaMenu.getBtnVeterinarios().addActionListener(l -> CrudVeterinario());
         vistaMenu.getMiVeterinario(); 
         //Revicion
-        vistaMenu.getMiRevicion().addActionListener(l -> CrudRevicion());
+        vistaMenu.getBtnRevision().addActionListener(l -> CrudRevicion());
     }
 
     public void CrudClientes(){
@@ -100,6 +100,14 @@ public class ControladorMenuPrincipal1 {
         vistaMenu.getjDesktop().add(vistaProductos);
         //ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
         //controladorProductos.iniciaControl2();
+    }
+    
+        public void CrudRevision(){
+        ModelRevision modeloRevision = new ModelRevision();
+        ViewCrudRevision vistaRevision = new ViewCrudRevision();
+        vistaMenu.getjDesktop().add(vistaRevision);
+        ControllerRevision controladorRevision = new ControllerRevision(modeloRevision, vistaRevision);
+        controladorRevision.iniciarControl();
     }
  
 }

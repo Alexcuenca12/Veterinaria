@@ -107,10 +107,10 @@ public class ModeloPaciente extends Paciente {
     //Metodo para crear paciente
     public boolean editarPaciente() {
         try {
-            sql = "UPDATE MASCOTA SET (nombre_mascota=?,raza_mascota=?"
+            sql = "UPDATE mascota SET (nombre_mascota=?,raza_mascota=?"
                     + ",sexo_mascota=?,especie_mascota=?,color_mascota=?"
                     + ",fecha_nacimiento_mascota=?,fecha_ingreso_mascota=?,foto_mas=?"
-                    + "WHERE id_mascota'" + getId_mascota() + "';";
+                    + "WHERE id_mascota ='" + getId_mascota() + "';";
             PreparedStatement ps = conection.getCon().prepareStatement(sql);
             ps.setString(1, getNombre_mascota());
             ps.setString(2, getRaza_mascota());
