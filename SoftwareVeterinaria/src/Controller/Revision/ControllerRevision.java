@@ -118,8 +118,9 @@ public class ControllerRevision {
                 vistaM.getTabla_Pacientes().setValueAt(new JLabel(icono), i.value, 9);
 
             } else {
-                i.value++;
+                vistaM.getTabla_Pacientes().setValueAt(null, i.value, 9);
             }
+            i.value++;
 
         });
 
@@ -149,11 +150,34 @@ public class ControllerRevision {
                         Icon icono = new ImageIcon(img);
                         vistaM.getLblFotoMascotaRev().setIcon(icono);
                     }
-                } else {
-                    JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
+
                 }
             }
+            vistaM.getDialogMascota().setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
+        }
+    }
 
+    public void agregarVeterinario() {
+        int selecc = vistaM.getTbl_Veterinario().getSelectedRow();
+        if (selecc != -1) {
+            String ver = vistaM.getTbl_Veterinario().getValueAt(selecc, 0).toString();
+            List<Veterinario> tablaVet = modelo.ListVet_completa();
+            for (int j = 0; j < tablaVet.size(); j++) {
+                if (tablaVet.get(j).getid_medico().equals(ver)) {
+                    vistaM.getTxt_IDVet().setText(tablaVet.get(j).getid_medico());
+                    vistaM.getTxt_NomVet().setText(tablaVet.get(j).getNombre_medico());
+                    vistaM.getTxt_ApellidoVet().setText(tablaVet.get(j).getApellido_medico());
+                    vistaM.getTxt_DireccVet().setText(tablaVet.get(j).getDireccion_medico());
+                    vistaM.getTxt_EspecialidadVet().setText(tablaVet.get(j).getEspecialidad());
+
+                }
+            }
+            vistaM.getDialogVeterinario().setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(vistaM, "No a seleccionado a ningun veterinario");
         }
     }
 
@@ -178,27 +202,6 @@ public class ControllerRevision {
 
         });
 
-    }
-
-    public void agregarVeterinario() {
-        int selecc = vistaM.getTbl_Veterinario().getSelectedRow();
-        if (selecc != -1) {
-            String ver = vistaM.getTbl_Veterinario().getValueAt(selecc, 0).toString();
-            List<Veterinario> tablaVet = modelo.ListVet_completa();
-            for (int j = 0; j < tablaVet.size(); j++) {
-                if (tablaVet.get(j).getid_medico().equals(ver)) {
-                    vistaM.getTxt_IDVet().setText(tablaVet.get(j).getid_medico());
-                    vistaM.getTxt_NomVet().setText(tablaVet.get(j).getNombre_medico());
-                    vistaM.getTxt_ApellidoVet().setText(tablaVet.get(j).getApellido_medico());
-                    vistaM.getTxt_DireccVet().setText(tablaVet.get(j).getDireccion_medico());
-                    vistaM.getTxt_EspecialidadVet().setText(tablaVet.get(j).getEspecialidad());
-
-                } else {
-                    JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
-                }
-            }
-
-        }
     }
 
     public void agregarRevision() {

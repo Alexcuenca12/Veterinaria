@@ -359,6 +359,72 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
         this.txtcodigo = txtcodigo;
     }
 
+    public JButton getBtnBuscar_Cli() {
+        return btnBuscar_Cli;
+    }
+
+    public void setBtnBuscar_Cli(JButton btnBuscar_Cli) {
+        this.btnBuscar_Cli = btnBuscar_Cli;
+    }
+
+    public JButton getBttAgregarCli() {
+        return bttAgregarCli;
+    }
+
+    public void setBttAgregarCli(JButton bttAgregarCli) {
+        this.bttAgregarCli = bttAgregarCli;
+    }
+
+    public JDialog getDlgCliente() {
+        return DlgCliente;
+    }
+
+    public void setDlgCliente(JDialog DlgCliente) {
+        this.DlgCliente = DlgCliente;
+    }
+
+
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    public void setjLabel20(JLabel jLabel20) {
+        this.jLabel20 = jLabel20;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JTable getTablacliente() {
+        return tablacliente;
+    }
+
+    public void setTablacliente(JTable tablacliente) {
+        this.tablacliente = tablacliente;
+    }
+
+    public JTextField getTxtBuscarClie() {
+        return txtBuscarClie;
+    }
+
+    public void setTxtBuscarClie(JTextField txtBuscarClie) {
+        this.txtBuscarClie = txtBuscarClie;
+    }
+
    
     /**
      * Creates new form VistaCrudPaciente
@@ -405,10 +471,18 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
         jLabel14 = new javax.swing.JLabel();
         dtNacimiento = new com.toedter.calendar.JDateChooser();
         dtIngreso = new com.toedter.calendar.JDateChooser();
+        btnBuscar_Cli = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        DlgCliente = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablacliente = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        txtBuscarClie = new javax.swing.JTextField();
+        bttAgregarCli = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnIngresar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -503,6 +577,9 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
         jPanel4.add(dtNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 140, -1));
         jPanel4.add(dtIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 140, -1));
 
+        btnBuscar_Cli.setText("Cliente");
+        jPanel4.add(btnBuscar_Cli, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
+
         btnAceptar.setText("ACEPTAR");
 
         btnCancelar.setText("CANCELAR");
@@ -545,6 +622,75 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8))
+        );
+
+        tablacliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nombre", "Apellido", "Telefono", "Email"
+            }
+        ));
+        jScrollPane2.setViewportView(tablacliente);
+
+        jLabel13.setText("Buscar:");
+
+        txtBuscarClie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarClieActionPerformed(evt);
+            }
+        });
+
+        bttAgregarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/Iconos/agregar.png"))); // NOI18N
+        bttAgregarCli.setText("AGREGAR");
+        bttAgregarCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttAgregarCliActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Microsoft YaHei", 1, 24)); // NOI18N
+        jLabel20.setText("CLIENTES");
+
+        javax.swing.GroupLayout DlgClienteLayout = new javax.swing.GroupLayout(DlgCliente.getContentPane());
+        DlgCliente.getContentPane().setLayout(DlgClienteLayout);
+        DlgClienteLayout.setHorizontalGroup(
+            DlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DlgClienteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBuscarClie, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bttAgregarCli)
+                .addGap(45, 45, 45))
+            .addGroup(DlgClienteLayout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addComponent(jLabel20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(DlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DlgClienteLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        DlgClienteLayout.setVerticalGroup(
+            DlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DlgClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGroup(DlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarClie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bttAgregarCli)
+                    .addComponent(jLabel13))
+                .addContainerGap())
+            .addGroup(DlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DlgClienteLayout.createSequentialGroup()
+                    .addGap(68, 68, 68)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(65, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -643,17 +789,28 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtBuscarClieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarClieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarClieActionPerformed
+
+    private void bttAgregarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttAgregarCliActionPerformed
+
+    }//GEN-LAST:event_bttAgregarCliActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog DlgCliente;
     private javax.swing.JDialog DlgPacientes;
     private javax.swing.JTable Tabla_Pacientes;
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnBuscar_Cli;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExaminar;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRemover;
+    private javax.swing.JButton bttAgregarCli;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbEspecie;
     private com.toedter.calendar.JDateChooser dtIngreso;
@@ -662,7 +819,9 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -676,12 +835,15 @@ public class VistaCrudPaciente  extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblFoto;
     private javax.swing.JLabel lblNumeroMascotas;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rbHembra;
     private javax.swing.JRadioButton rbMacho;
+    private javax.swing.JTable tablacliente;
     private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscarClie;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtRaza;

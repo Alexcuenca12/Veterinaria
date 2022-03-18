@@ -1,5 +1,6 @@
 package Model.Paciente;
 
+import Model.Clientes.Clientes;
 import Model.ConectionPg;
 import java.awt.Image;
 import java.io.ByteArrayInputStream;
@@ -76,6 +77,34 @@ public class ModeloPaciente extends Paciente {
             Logger.getLogger(ModeloPaciente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
+    }
+
+    public ArrayList<Clientes> ListClient() {
+        ArrayList<Clientes> lista = new ArrayList<>();
+
+        try {
+            //Sentencia
+            String sql = "Select * from clientes";
+            ResultSet rs = conection.consulta(sql);
+            while (rs.next()) {
+                Clientes cli = new Clientes();
+                cli.setId_cliente(rs.getString("id_cliente"));
+                cli.setNombre_cliente(rs.getString("nombre_cliente"));
+                cli.setApellido_cliente(rs.getString("apellido_cliente"));
+                cli.setFechanacimiento(rs.getDate("fechanacimiento"));
+                cli.setTelefono(rs.getString("telefono"));
+                cli.setEmail(rs.getString("email"));
+                cli.setDireccion_cliente(rs.getString("direccion_cliente"));
+                cli.setFechaingreso(rs.getDate("fechaingreso"));
+                lista.add(cli);
+            }
+            rs.close();
+            return lista;
+        } catch (SQLException ex) {
+            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
     }
 
     //Metodo para crear paciente
