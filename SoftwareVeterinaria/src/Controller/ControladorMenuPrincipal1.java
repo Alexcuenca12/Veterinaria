@@ -6,6 +6,7 @@
 package Controller;
 
 import Controller.Cliente.ControladorCliente;
+import Controller.CrudVeterinario.ControllerVeterinario;
 import Controller.Paciente.ControladorPaciente;
 import Controller.Revision.ControllerRevision;
 import Model.Clientes.ModeloClientes;
@@ -76,8 +77,8 @@ public class ControladorMenuPrincipal1 {
         ModelVeterinario modelVeterinario = new ModelVeterinario();
         ViewVeterinario viewVeterinario = new ViewVeterinario();
         vistaMenu.getjDesktop().add(viewVeterinario);
-        //ControllerVeterinario controllerVeterinario = new ControllerVeterinario();
-        //controllerVeterinario.iniciaControl();
+        ControllerVeterinario controllerVet = new ControllerVeterinario(modelVeterinario,viewVeterinario);
+        controllerVet.iniciarControl();
     }
     public void CrudPaciente(){
         ModeloPaciente modeloPaciente = new ModeloPaciente();

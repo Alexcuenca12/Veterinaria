@@ -51,7 +51,7 @@ public class ModelVeterinario extends Veterinario {
     public boolean CrearVeterinario() {
         String sql;
         sql = "Insert into veterinario(id_medico, nombre_medico, apellido_medico, direccion_medico, especialidad, contraseña)";
-        sql += "values(?,?,?,?)";
+        sql += "values(?,?,?,?,?,?)";
         try {
             PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getid_medico());
@@ -87,9 +87,9 @@ public class ModelVeterinario extends Veterinario {
         }
     }
 
-    public boolean EliminaVeterinario() {
+    public boolean EliminaVeterinario(String id_veterinario) {
         String sql;
-        sql = "delete from veterinario where id_medico=?";
+        sql = "delete from veterinario where id_medico=";
         try {
             PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getid_medico());

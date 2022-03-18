@@ -28,6 +28,7 @@ public class SoftwareVeterinaria {
 //        // CREACION DEL CONTROLADOR LOGIN
 //        ControllerLogin controller= new ControllerLogin(vista,model);
 //        controller.IniciarControl();
+
         MenuPrincipal vista=new MenuPrincipal();
         ControladorMenuPrincipal1 control=new ControladorMenuPrincipal1(vista);
         control.iniciaControl();
