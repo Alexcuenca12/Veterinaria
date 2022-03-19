@@ -43,28 +43,28 @@ public class LoginVet extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(218, 218, 249));
+        jPanel1.setBackground(new java.awt.Color(240, 187, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/imgLogin.jpg"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/3047886 (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesProyecto/salud.png"))); // NOI18N
 
-        labelContraseña.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        labelContraseña.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         labelContraseña.setText("Contraseña");
 
         txtusuario.setFont(new java.awt.Font("Baskerville Old Face", 0, 18)); // NOI18N
         txtusuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, null, null));
 
-        label_Usuario.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        label_Usuario.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         label_Usuario.setText("Id Usuario");
 
         txtcontraseña.setFont(new java.awt.Font("Baskerville Old Face", 0, 11)); // NOI18N
         txtcontraseña.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnIniciarSesion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btnIniciarSesion.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         btnIniciarSesion.setText("Iniciar Sesión");
 
-        btnRestablecer.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btnRestablecer.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         btnRestablecer.setText("Restablecer Contraseña");
         btnRestablecer.setBorder(null);
 
@@ -74,23 +74,23 @@ public class LoginVet extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 227, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(21, 21, 21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnIniciarSesion)
                             .addComponent(btnRestablecer, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnIniciarSesion)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(label_Usuario)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtusuario)
                                     .addComponent(labelContraseña)
                                     .addComponent(txtcontraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,16 +99,16 @@ public class LoginVet extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(36, 36, 36)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87)
                 .addComponent(label_Usuario)
                 .addGap(18, 18, 18)
                 .addComponent(txtusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(labelContraseña)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(txtcontraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(58, 58, 58)
                 .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRestablecer, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
