@@ -43,9 +43,10 @@ public class ModelRevision extends Revision {
     public ModelRevision() {
     }
 
-    public ModelRevision(String sql, String idRevision, String idMedico, String idMascota, Date fecha_revision, String descripcion, String enfermedad) {
-        super(idRevision, idMedico, idMascota, fecha_revision, descripcion, enfermedad);
+    public ModelRevision(String sql, byte[] bytea, int idRevision, String idMedico, String idMascota, String nombreMascota, Date fecha_revision, String descripcion, String enfermedad) {
+        super(idRevision, idMedico, idMascota, nombreMascota, fecha_revision, descripcion, enfermedad);
         this.sql = sql;
+        this.bytea = bytea;
     }
 
     //Metodos 
@@ -56,9 +57,10 @@ public class ModelRevision extends Revision {
 
             while (rs.next()) {
                 Revision revision = new Revision();
-                revision.setIdRevision(rs.getString("id_revision"));
+                revision.setIdRevision(rs.getInt("id_revision"));
                 revision.setIdMedico(rs.getString("id_medico_revision"));
                 revision.setIdMascota(rs.getString("id_mascota_revision"));
+                revision.setNombreMascota(rs.getString("nombre_mascota"));
                 revision.setFecha_revision(rs.getDate("fecha_revision"));
                 revision.setDescripcion(rs.getString("descripcion_revision"));
                 revision.setEnfermedad(rs.getString("nombre_enfermedad"));
@@ -105,7 +107,8 @@ public class ModelRevision extends Revision {
             return null;
         }
     }
-        public ArrayList<Veterinario> ListVet_completa() {
+
+    public ArrayList<Veterinario> ListVet_completa() {
         ArrayList<Veterinario> lista = new ArrayList<>();
 
         try {
@@ -134,15 +137,17 @@ public class ModelRevision extends Revision {
     //Metodo para crear la revision
     public boolean CrearRevision() {
         try {
-            sql = "INSERT INTO REVISION(id_revision,id_medico_revision,id_mascota_revision,fecha_revision,descripcion_revision,nombre_enfermedad)";
-            sql += "VALUES(?,?,?,?,?,?)";
+            sql = "INSERT INTO REVISION(id_revision,id_medico_revision,id_mascota_revision,nombre_mascota,"
+                    + "fecha_revision,descripcion_revision,nombre_enfermedad)";
+            sql += "VALUES(?,?,?,?,?,?,?)";
             PreparedStatement ps = conexion.getCon().prepareStatement(sql);
-            ps.setString(1, getIdRevision());
+            ps.setInt(1, getIdRevision());
             ps.setString(2, getIdMedico());
             ps.setString(3, getIdMascota());
-            ps.setDate(4, getFecha_revision());
-            ps.setString(5, getDescripcion());
-            ps.setString(6, getEnfermedad());
+            ps.setString(4, getNombreMascota());
+            ps.setDate(5, getFecha_revision());
+            ps.setString(6, getDescripcion());
+            ps.setString(7, getEnfermedad());
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
@@ -188,9 +193,10 @@ public class ModelRevision extends Revision {
 
             while (rs.next()) {
                 Revision revision = new Revision();
-                revision.setIdRevision(rs.getString("id_revision"));
+                revision.setIdRevision(rs.getInt("id_revision"));
                 revision.setIdMedico(rs.getString("id_medico_revision"));
                 revision.setIdMascota(rs.getString("id_mascota_revision"));
+                revision.setNombreMascota(rs.getString("nombre_mascota"));
                 revision.setFecha_revision(rs.getDate("fecha_revision"));
                 revision.setDescripcion(rs.getString("descripcion_revision"));
                 revision.setEnfermedad(rs.getString("nombre_enfermedad"));
@@ -203,7 +209,8 @@ public class ModelRevision extends Revision {
             return null;
         }
     }
-        //Metodo para obtener imagen
+    //Metodo para obtener imagen
+
     private Image ObtenerFoto(byte[] bytes) throws IOException {
         ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
         Iterator it = ImageIO.getImageReadersByFormatName("jpeg");

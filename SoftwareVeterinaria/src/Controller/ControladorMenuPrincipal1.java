@@ -54,7 +54,7 @@ public class ControladorMenuPrincipal1 {
         //Veterinario
         vistaMenu.getBtnVeterinarios().addActionListener(l -> CrudVeterinario());
         vistaMenu.getMiVeterinario(); 
-        //Revicion
+        //Revision
         vistaMenu.getBtnRevision().addActionListener(l -> CrudRevicion());
     }
 
@@ -70,8 +70,8 @@ public class ControladorMenuPrincipal1 {
         ModelProducto modeloProductos = new ModelProducto();
         VistaCrudProductos vistaProductos = new VistaCrudProductos();
         vistaMenu.getjDesktop().add(vistaProductos);
-        //ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
-        //controladorProductos.iniciaControl2();
+//        ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
+//        controladorProductos.iniciaControl2();
     }
     public void CrudVeterinario(){
         ModelVeterinario modelVeterinario = new ModelVeterinario();

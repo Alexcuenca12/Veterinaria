@@ -5,20 +5,28 @@
  */
 package Controller.Revision;
 
+import Model.ConectionPg;
 import Model.Paciente.ModeloPaciente;
 import Model.Paciente.Paciente;
 import Model.Revision.ModelRevision;
+import Model.Revision.Revision;
 import Model.Veterinario.ModelVeterinario;
 import Model.Veterinario.Veterinario;
 import View.Revision.*;
 import java.awt.Image;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -44,7 +52,8 @@ public class ControllerRevision {
         vistaM.setVisible(true);
         Calendar calendar = new GregorianCalendar();
         vistaM.getTxtFechaRev().setText("" + calendar.get(Calendar.YEAR) + "-" + calendar.get(Calendar.MONTH) + "-" + calendar.get(Calendar.DAY_OF_MONTH));
-        //vistaM.getTxtIdfacturaRev().setEnabled(false);
+        codigo();
+        vistaM.getTxtIdfacturaRev().setEnabled(false);
     }
 
     public void iniciarControl() {
@@ -56,7 +65,10 @@ public class ControllerRevision {
         vistaM.getBtnBuscarMed().addActionListener(l -> CargarVeterinario());
         vistaM.getBtn_AgregarMas().addActionListener(l -> agregarMascota());
         vistaM.getBtn_AgregarMed().addActionListener(l -> agregarVeterinario());
+        vistaM.getBtnAgregarRev().addActionListener(l -> agregarRevision());
+        vistaM.getBtnAgregarRev().addActionListener(l -> cargarRevision());
         //CargarMascota();
+        cargarRevision();
         //CargarVeterinario();
     }
 
@@ -155,7 +167,7 @@ public class ControllerRevision {
             }
             vistaM.getDialogMascota().setVisible(false);
         } else {
-            JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
+            //JOptionPane.showMessageDialog(vistaM, "No a seleccionado a niguna mascota");
         }
     }
 
@@ -177,7 +189,7 @@ public class ControllerRevision {
             vistaM.getDialogVeterinario().setVisible(false);
 
         } else {
-            JOptionPane.showMessageDialog(vistaM, "No a seleccionado a ningun veterinario");
+            //JOptionPane.showMessageDialog(vistaM, "No a seleccionado a ningun veterinario");
         }
     }
 
@@ -206,9 +218,13 @@ public class ControllerRevision {
 
     public void agregarRevision() {
 
-        String idRevision = vistaM.getTxtIdfacturaRev().getText();
+        int item = 0;
+        item = item + 1;
+
+        int idRevision = Integer.parseInt(vistaM.getTxtIdfacturaRev().getText());
         String idMedico = vistaM.getTxt_IDVet().getText();
         String idMascota = vistaM.getTxtIdmascotaRev().getText();
+        String nomMascota = vistaM.getTxtNombreMRev().getText();
         String fechafac = vistaM.getTxtFechaRev().getText();
         Date fechaRevision = java.sql.Date.valueOf(fechafac);
         String diagnostico = vistaM.getTxt_enfermedad().getText();
@@ -218,14 +234,74 @@ public class ControllerRevision {
         modelRe.setIdRevision(idRevision);
         modelRe.setIdMedico(idMedico);
         modelRe.setIdMascota(idMascota);
+        modelRe.setNombreMascota(nomMascota);
         modelRe.setFecha_revision(fechaRevision);
         modelRe.setEnfermedad(diagnostico);
         modelRe.setDescripcion(descripRe);
         if (modelRe.CrearRevision()) {
             JOptionPane.showMessageDialog(vistaM, "Revision Guardada satisfactoriamente");
+            codigo();
+            
         } else {
             JOptionPane.showMessageDialog(vistaM, "No se pudo crear la revision");
         }
+
+    }
+
+    public void cargarRevision() {
+
+        //Enlace de la tabla con el metodo de las etiquetas
+        DefaultTableModel tblmodel;
+        tblmodel = (DefaultTableModel) vistaM.getTablaRev().getModel();
+        tblmodel.setNumRows(0);
+
+        List<Revision> tablaRev = modelo.listarRevisiones();
+        Holder<Integer> i = new Holder<>(0);
+        tablaRev.stream().forEach(pac -> {
+            //Agregar a la tabla
+            tblmodel.addRow(new Object[6]);
+            vistaM.getTablaRev().setValueAt(pac.getIdRevision(), i.value, 0);
+            vistaM.getTablaRev().setValueAt(pac.getIdMedico(), i.value, 1);
+            vistaM.getTablaRev().setValueAt(pac.getIdMascota(), i.value, 2);
+            vistaM.getTablaRev().setValueAt(pac.getNombreMascota(), i.value, 3);
+            vistaM.getTablaRev().setValueAt(pac.getFecha_revision(), i.value, 4);
+            vistaM.getTablaRev().setValueAt(pac.getDescripcion(), i.value, 5);
+            vistaM.getTablaRev().setValueAt(pac.getEnfermedad(), i.value, 6);
+            i.value++;
+
+        });
+
+    }
+
+    public void codigo() {
+
+        boolean Codi = false;
+        String codigo;
+        do {
+            Random rd = new Random();
+            Random rc = new Random(123);
+            codigo = String.valueOf(rd.nextInt(9999 - 1 + 1) + 25);
+            ConectionPg cpg = new ConectionPg();
+            Statement st;
+            ResultSet rs = null;
+            PreparedStatement ps = null;
+            Connection con = cpg.getCon();
+
+            try {
+                String sql = "SELECT id_revision FROM revision WHERE id_revision='" + codigo + "'";
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    Codi = true;
+                }
+
+                rs.close();
+            } catch (SQLException ex) {
+                System.err.println(ex.toString());
+            }
+
+        } while (Codi == true);
+        vistaM.getTxtIdfacturaRev().setText(codigo);
 
     }
 }

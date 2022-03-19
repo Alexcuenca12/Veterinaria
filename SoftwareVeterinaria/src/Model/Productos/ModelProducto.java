@@ -1,7 +1,6 @@
 package Model.Productos;
 
 //--Hecho por David Sisalima 
-
 import Model.ConectionPg;
 import java.awt.Image;
 import java.io.ByteArrayInputStream;
@@ -20,14 +19,14 @@ import javax.imageio.ImageReadParam;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
-public class ModelProducto extends Productos{
-    
-     ConectionPg conexion=new ConectionPg();
+public class ModelProducto extends Productos {
+
+    ConectionPg conexion = new ConectionPg();
     //Variables
     private String sql;
-    private byte [] bytea;
+    private byte[] bytea;
     public static List<Productos> listaProductos = new ArrayList<Productos>();
-    
+
     //Constructor vacio y full
     public ModelProducto() {
     }
@@ -37,26 +36,26 @@ public class ModelProducto extends Productos{
         this.sql = sql;
         this.bytea = bytea;
     }
-    
+
     //Metodos
-    public List<Productos> listarProductos(){
-        sql="SELECT * FROM PRODUCTOS";
-        ResultSet rs=conexion.consulta(sql);
+    public List<Productos> listarProductos() {
+        sql = "SELECT * FROM PRODUCTOS";
+        ResultSet rs = conexion.consulta(sql);
         try {
             while (rs.next()) {
-                Productos producto=new Productos();
+                Productos producto = new Productos();
                 producto.setIdProducto(rs.getString("id_producto"));
                 producto.setIdCategoria(rs.getString("id_categoria_p"));
                 producto.setNombreProducto(rs.getString("nombre_producto"));
                 producto.setPrecio(rs.getDouble("precio_producto"));
                 producto.setStock(rs.getInt("stock_producto"));
-                bytea=rs.getBytes("foto_pro");
-                if (bytea!=null) {
+                bytea = rs.getBytes("foto_pro");
+                if (bytea != null) {
                     try {
                         producto.setFoto(ObtenerFoto(bytea));
                     } catch (IOException ex) {
                         Logger.getLogger(ModelProducto.class.getName()).log(Level.SEVERE, null, ex);
-                    }                    
+                    }
                 }
                 listaProductos.add(producto);
             }
@@ -67,29 +66,29 @@ public class ModelProducto extends Productos{
             return null;
         }
     }
-    
+
     //Metodo para obtener imagen
-    private Image ObtenerFoto(byte [] bytes) throws IOException{
-        ByteArrayInputStream bis=new ByteArrayInputStream(bytes);
-        Iterator it=ImageIO.getImageReadersByFormatName("jpeg");
-        ImageReader reader=(ImageReader)it.next();
-        Object source=bis;
-        ImageInputStream iis=ImageIO.createImageInputStream(source);
+    private Image ObtenerFoto(byte[] bytes) throws IOException {
+        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+        Iterator it = ImageIO.getImageReadersByFormatName("jpeg");
+        ImageReader reader = (ImageReader) it.next();
+        Object source = bis;
+        ImageInputStream iis = ImageIO.createImageInputStream(source);
         reader.setInput(iis, true);
-        ImageReadParam param=reader.getDefaultReadParam();
+        ImageReadParam param = reader.getDefaultReadParam();
         param.setSourceSubsampling(1, 1, 0, 0);
-        return  reader.read(0, param);
+        return reader.read(0, param);
     }
-    
+
     //Metodo para crear producto
-    public boolean crearProducto(){
-        
+    public boolean crearProducto() {
+
         try {
-            sql="INSERT INTO PRODUCTOS(id_producto,id_categoria,nombre_producto"
+            sql = "INSERT INTO PRODUCTOS(id_producto,id_categoria,nombre_producto"
                     + ",precio_producto,stock_producto,foto_pro)";
-            sql+="VALUES(?,?,?,?,?,?)";
-            
-            PreparedStatement ps=conexion.getCon().prepareStatement(sql);
+            sql += "VALUES(?,?,?,?,?,?)";
+
+            PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getIdProducto());
             ps.setString(2, getIdCategoria());
             ps.setString(3, getNombreProducto());
@@ -103,13 +102,13 @@ public class ModelProducto extends Productos{
             return false;
         }
     }
-    
+
     //Metodo para editarProductos sin la imagen 
-    public boolean editarProducto(){
+    public boolean editarProducto() {
         try {
-            sql="UPDATE producto set nombre_producto=?,precio_producto=?,stock_producto=?"
-                    + "WHERE id_producto='"+getIdProducto()+"';";
-            PreparedStatement ps=conexion.getCon().prepareStatement(sql);
+            sql = "UPDATE producto set nombre_producto=?,precio_producto=?,stock_producto=?"
+                    + "WHERE id_producto='" + getIdProducto() + "';";
+            PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getNombreProducto());
             ps.setDouble(2, getPrecio());
             ps.setInt(3, getStock());
@@ -118,15 +117,15 @@ public class ModelProducto extends Productos{
         } catch (SQLException ex) {
             Logger.getLogger(ModelProducto.class.getName()).log(Level.SEVERE, null, ex);
             return false;
-        }   
+        }
     }
-    
+
     //Metodo para editarProductos con la imagen 
-    public boolean editarProducto2(){
+    public boolean editarProducto2() {
         try {
-            sql="UPDATE producto set nombre_producto=?,precio_producto=?,stock_producto=?,foto_pro=?" //Se añadio foto
-                    + "WHERE id_producto='"+getIdProducto()+"';";
-            PreparedStatement ps=conexion.getCon().prepareStatement(sql);
+            sql = "UPDATE producto set nombre_producto=?,precio_producto=?,stock_producto=?,foto_pro=?" //Se añadio foto
+                    + "WHERE id_producto='" + getIdProducto() + "';";
+            PreparedStatement ps = conexion.getCon().prepareStatement(sql);
             ps.setString(1, getNombreProducto());
             ps.setDouble(2, getPrecio());
             ps.setInt(3, getStock());
@@ -136,48 +135,49 @@ public class ModelProducto extends Productos{
         } catch (SQLException ex) {
             Logger.getLogger(ModelProducto.class.getName()).log(Level.SEVERE, null, ex);
             return false;
-        } 
+        }
     }
-    
-     //Metodo para eliminar un producto
-     public boolean eliminarProducto(String idproducto) {
+
+    //Metodo para eliminar un producto
+    public boolean eliminarProducto(String idproducto) {
         String sql;
         sql = "DELETE FROM PRODUCTOS WHERE id_producto='" + idproducto + "';";
         return conexion.accion(sql);
     }
-    
-     //Metodo para buscar un producto
-     public List<Productos> busqueda(String objeto){
-        
-            if (objeto.equalsIgnoreCase("")) {
-                sql="SELECT * FROM PRODUCTOS";
-            }else if (objeto.equalsIgnoreCase(objeto)) {
-                sql="SELECT * FROM PRODUCTOS WHERE UPPER (nombre_producto) like UPPER('%"+objeto+"%')";
-            }
-            try {
-            ResultSet rs=conexion.consulta(sql);
+
+    //Metodo para buscar un producto
+    public List<Productos> busqueda(String objeto) {
+
+        if (objeto.equalsIgnoreCase("")) {
+            sql = "SELECT * FROM PRODUCTOS";
+        } else if (objeto.equalsIgnoreCase(objeto)) {
+            sql = "SELECT * FROM PRODUCTOS WHERE UPPER (nombre_producto) like UPPER('%" + objeto + "%')";
+        }
+        try {
+            ResultSet rs = conexion.consulta(sql);
             while (rs.next()) {
-               Productos producto=new Productos();
+                Productos producto = new Productos();
                 producto.setIdProducto(rs.getString("id_producto"));
                 producto.setIdCategoria(rs.getString("id_categoria_p"));
                 producto.setNombreProducto(rs.getString("nombre_producto"));
                 producto.setPrecio(rs.getDouble("precio_producto"));
                 producto.setStock(rs.getInt("stock_producto"));
-                bytea=rs.getBytes("foto_pro");
-                if (bytea!=null) {
+                bytea = rs.getBytes("foto_pro");
+                if (bytea != null) {
                     try {
                         producto.setFoto(ObtenerFoto(bytea));
                     } catch (IOException ex) {
                         Logger.getLogger(ModelProducto.class.getName()).log(Level.SEVERE, null, ex);
-                    }                    
+                    }
                 }
                 listaProductos.add(producto);
             }
-            rs.close(); 
+            rs.close();
             return listaProductos;
         } catch (SQLException ex) {
             Logger.getLogger(ModelProducto.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-     }
+    }
+
 }

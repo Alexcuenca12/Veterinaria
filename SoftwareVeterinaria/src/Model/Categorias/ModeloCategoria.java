@@ -78,14 +78,14 @@ public class ModeloCategoria extends Categoria{
     }
     
     //Metodo para eliminar categoria
-    public boolean eliminarProducto(String idCategoria) {
+    public boolean eliminarCategoria(String idCategoria) {
         String sql;
         sql = "DELETE FROM CATEGORIA WHERE id_categoria='" + idCategoria + "';";
         return conexion.accion(sql);
     }
     
     //Metodo para buscar una categoria 
-     public List<Categoria> busqueda(String objeto){
+     public List<Categoria> busquedaCategoria(String objeto){
         try {
             if (objeto.equalsIgnoreCase("")) {
                sql="SELECT * FROM CATEGORIA"; 

@@ -1,6 +1,5 @@
 package Controller.Paciente;
 
-import static Controller.Cliente.ControladorCliente.CalcularEdad;
 import Model.Clientes.Clientes;
 import Model.Paciente.ModeloPaciente;
 import Model.Paciente.Paciente;
@@ -8,7 +7,6 @@ import View.CrudPacientes.VistaCrudPaciente;
 import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,7 +25,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -377,5 +374,4 @@ public class ControladorPaciente {
             JOptionPane.showMessageDialog(vista, "No a seleccionado a nigun cliente");
         }
     }
-    
 }

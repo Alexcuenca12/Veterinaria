@@ -13,9 +13,10 @@ import java.sql.Date;
  */
 public class Revision {
     //Variables
-    private String idRevision;
+    private int idRevision;
     private String idMedico;
     private String idMascota; 
+    private String nombreMascota;
     private Date fecha_revision; 
     private String descripcion;
     private String enfermedad;
@@ -25,22 +26,24 @@ public class Revision {
     public Revision() {
     }
 
-    public Revision(String idRevision, String idMedico, String idMascota, Date fecha_revision, String descripcion, String enfermedad) {
+    public Revision(int idRevision, String idMedico, String idMascota, String nombreMascota, Date fecha_revision, String descripcion, String enfermedad) {
         this.idRevision = idRevision;
         this.idMedico = idMedico;
         this.idMascota = idMascota;
+        this.nombreMascota = nombreMascota;
         this.fecha_revision = fecha_revision;
         this.descripcion = descripcion;
         this.enfermedad = enfermedad;
     }
-    
+
+
     //Getters and setters
 
-    public String getIdRevision() {
+    public int getIdRevision() {
         return idRevision;
     }
 
-    public void setIdRevision(String idRevision) {
+    public void setIdRevision(int idRevision) {
         this.idRevision = idRevision;
     }
 
@@ -83,5 +86,15 @@ public class Revision {
     public void setEnfermedad(String enfermedad) {
         this.enfermedad = enfermedad;
     }
+
+    public String getNombreMascota() {
+        return nombreMascota;
+    }
+
+    public void setNombreMascota(String nombreMascota) {
+        this.nombreMascota = nombreMascota;
+    }
+    
+    
     
 }

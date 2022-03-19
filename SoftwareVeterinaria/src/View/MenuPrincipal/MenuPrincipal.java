@@ -289,7 +289,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(btnRevision)
                 .addGap(36, 36, 36)
                 .addComponent(btnServicios)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jDesktopLayout = new javax.swing.GroupLayout(jDesktop);
