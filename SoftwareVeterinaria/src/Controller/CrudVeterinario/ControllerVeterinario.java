@@ -37,7 +37,6 @@ public class ControllerVeterinario {
         vista.getBtnModificar_Vet().addActionListener(xd -> abrirDialogo(2));
         //Creacion
         vista.getBtnCrear_Vet().addActionListener(xd -> Crear_ModificarVet());
-
         vista.getBtnEliminar_Vet().addActionListener(xd -> EliminarVeterinario());
         vista.getBtnCancelar_Vet().addActionListener(xd -> Cancelar());
 
