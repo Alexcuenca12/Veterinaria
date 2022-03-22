@@ -1,6 +1,6 @@
 package Controller.Productos;
 
-import Controller.Paciente.ControladorPaciente;
+
 import Controller.Revision.ImagenTabla;
 import Model.Categorias.Categoria;
 import Model.Categorias.ModeloCategoria;
@@ -72,7 +72,7 @@ public class ControladorProductos extends Productos {
         vistaP.getDlgCrearProd().setLocationRelativeTo(vistaP);
         if (ce == 1) {
             tittle = "Crear";
-            vistaP.getDlgCrearProd().setName("CREAR PACIENTE");
+            vistaP.getDlgCrearProd().setName("CREAR PRODUCTO");
             vistaP.getLblTITULO().setText(tittle);
             vistaP.getDlgCrearProd().setVisible(true);
             vistaP.getDlgCrearProd().setLocationRelativeTo(vistaP);
@@ -82,7 +82,7 @@ public class ControladorProductos extends Productos {
         } else {
             if (vistaP.getTblProductos().getSelectedRow() > -1) {
                 tittle = "Edit";
-                vistaP.getDlgCrearProd().setName("EDITAR PACIENTE");
+                vistaP.getDlgCrearProd().setName("EDITAR PRODUCTO");
                 vistaP.getLblTITULO().setText(tittle);
                 vistaP.getDlgCrearProd().setVisible(true);
                 vistaP.getDlgCrearProd().setLocationRelativeTo(vistaP);
@@ -152,7 +152,7 @@ public class ControladorProductos extends Productos {
 
     public void agregar_modProductos() {
 
-        if (vistaP.getDlgCrearProd().getName().equals("CREAR PACIENTE")) {
+        if (vistaP.getDlgCrearProd().getName().equals("CREAR PRODUCTO")) {
             String idProducto = vistaP.getTxtIdprod().getText();
             String nomPro = vistaP.getTxtNombreP().getText();
             double prePro = Double.parseDouble(vistaP.getTxtPrecioP().getText());
@@ -211,7 +211,7 @@ public class ControladorProductos extends Productos {
                 vistaP.getLblFoto().updateUI();
 
             } catch (IOException ex) {
-                Logger.getLogger(ControladorPaciente.class
+                Logger.getLogger(ControladorProductos.class
                         .getName()).log(Level.SEVERE, null, ex);
             }
         }
