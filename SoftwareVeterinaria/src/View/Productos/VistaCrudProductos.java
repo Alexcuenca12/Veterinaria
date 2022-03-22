@@ -4,6 +4,7 @@
  */
 package View.Productos;
 
+import Controller.Productos.ControladorProductos;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
@@ -25,6 +26,7 @@ public class VistaCrudProductos extends javax.swing.JInternalFrame {
      */
     public VistaCrudProductos() {
         initComponents();
+        ControladorProductos.cargarCombo(cb_categoria);
     }
 
     public JComboBox<String> getCb_categoria() {
@@ -571,7 +573,7 @@ public class VistaCrudProductos extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "ID", "NOMBRE", "PRECIO", "CANTIDAD", "ID CATEGORIA"
+                "ID", "NOMBRE", "PRECIO", "CANTIDAD", "ID CATEGORIA", "FOTO"
             }
         ));
         jScrollPane1.setViewportView(tblProductos);

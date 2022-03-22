@@ -67,8 +67,7 @@ public class ModeloCategoria extends Categoria{
         try {
             sql="UPDATE CATEGORIA SET nombre_categoria=? WHERE id_categoria='"+getId_Categoria()+"';";
             PreparedStatement ps=conexion.getCon().prepareStatement(sql);
-            ps.setString(1, getId_Categoria());
-            ps.setString(2, getNombre());
+            ps.setString(1, getNombre());
             ps.executeUpdate();
             return true;
         } catch (SQLException ex) {

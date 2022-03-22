@@ -8,7 +8,9 @@ package Controller;
 import Controller.Cliente.ControladorCliente;
 import Controller.CrudVeterinario.ControllerVeterinario;
 import Controller.Paciente.ControladorPaciente;
+import Controller.Productos.ControladorProductos;
 import Controller.Revision.ControllerRevision;
+import Model.Categorias.ModeloCategoria;
 import Model.Clientes.ModeloClientes;
 import Model.Paciente.ModeloPaciente;
 import Model.Productos.ModelProducto;
@@ -26,6 +28,7 @@ import View.Veterinario.ViewVeterinario;
  * @author Usuario
  */
 public class ControladorMenuPrincipal1 {
+
     MenuPrincipal vistaMenu;
 
     public ControladorMenuPrincipal1(MenuPrincipal vistaMenu) {
@@ -33,13 +36,13 @@ public class ControladorMenuPrincipal1 {
         vistaMenu.setVisible(true);
         this.vistaMenu.setLocationRelativeTo(null);
     }
-    
-    public void iniciaControl(){
+
+    public void iniciaControl() {
         //Cliente
-        vistaMenu.getBtnClientes().addActionListener(l ->CrudClientes());
-        vistaMenu.getMiClientes().addActionListener(l ->CrudClientes());
+        vistaMenu.getBtnClientes().addActionListener(l -> CrudClientes());
+        vistaMenu.getMiClientes().addActionListener(l -> CrudClientes());
         //Productos
-        vistaMenu.getBtnProductos().addActionListener(l -> CrudProductos()); 
+        vistaMenu.getBtnProductos().addActionListener(l -> CrudProductos());
         vistaMenu.getMiProductos();
         //Paciente
         vistaMenu.getBtnPacientes().addActionListener(l -> CrudPaciente());
@@ -53,61 +56,66 @@ public class ControladorMenuPrincipal1 {
         vistaMenu.getMiServicios();
         //Veterinario
         vistaMenu.getBtnVeterinarios().addActionListener(l -> CrudVeterinario());
-        vistaMenu.getMiVeterinario(); 
+        vistaMenu.getMiVeterinario();
         //Revision
         vistaMenu.getBtnRevision().addActionListener(l -> CrudRevicion());
     }
 
-    public void CrudClientes(){
-        ModeloClientes modeloClientes=new ModeloClientes();
-        VistaCrudPersona vistaClientes=new VistaCrudPersona();
+    public void CrudClientes() {
+        ModeloClientes modeloClientes = new ModeloClientes();
+        VistaCrudPersona vistaClientes = new VistaCrudPersona();
         vistaMenu.getjDesktop().add(vistaClientes);
-        ControladorCliente controlador=new ControladorCliente(modeloClientes, vistaClientes);
+        ControladorCliente controlador = new ControladorCliente(modeloClientes, vistaClientes);
         controlador.iniciarControl();
     }
-    
-    public void CrudProductos(){
+
+    public void CrudProductos() {
         ModelProducto modeloProductos = new ModelProducto();
         VistaCrudProductos vistaProductos = new VistaCrudProductos();
+        ModeloCategoria modeloCategoria = new ModeloCategoria();
         vistaMenu.getjDesktop().add(vistaProductos);
-//        ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
-//        controladorProductos.iniciaControl2();
+        ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, modeloCategoria, vistaProductos);
+        controladorProductos.iniciarControl();
     }
-    public void CrudVeterinario(){
+
+    public void CrudVeterinario() {
         ModelVeterinario modelVeterinario = new ModelVeterinario();
         ViewVeterinario viewVeterinario = new ViewVeterinario();
         vistaMenu.getjDesktop().add(viewVeterinario);
-        ControllerVeterinario controllerVet = new ControllerVeterinario(modelVeterinario,viewVeterinario);
+        ControllerVeterinario controllerVet = new ControllerVeterinario(modelVeterinario, viewVeterinario);
         controllerVet.iniciarControl();
     }
-    public void CrudPaciente(){
+
+    public void CrudPaciente() {
         ModeloPaciente modeloPaciente = new ModeloPaciente();
         VistaCrudPaciente crudPaciente = new VistaCrudPaciente();
         vistaMenu.getjDesktop().add(crudPaciente);
         ControladorPaciente controladorPaciente = new ControladorPaciente(modeloPaciente, crudPaciente);
         controladorPaciente.iniciaControl();
     }
-    public void CrudRevicion(){
+
+    public void CrudRevicion() {
         ModelRevision modelRevision = new ModelRevision();
-        ViewCrudRevision crudRevision=new ViewCrudRevision();
+        ViewCrudRevision crudRevision = new ViewCrudRevision();
         vistaMenu.getjDesktop().add(crudRevision);
         ControllerRevision controllerRevision = new ControllerRevision(modelRevision, crudRevision);
         controllerRevision.iniciarControl();
     }
-    public void CrudServicios(){
+
+    public void CrudServicios() {
         ModelProducto modeloProductos = new ModelProducto();
         VistaCrudProductos vistaProductos = new VistaCrudProductos();
         vistaMenu.getjDesktop().add(vistaProductos);
         //ControladorProductos controladorProductos = new ControladorProductos(modeloProductos, vistaProductos);
         //controladorProductos.iniciaControl2();
     }
-    
-        public void CrudRevision(){
+
+    public void CrudRevision() {
         ModelRevision modeloRevision = new ModelRevision();
         ViewCrudRevision vistaRevision = new ViewCrudRevision();
         vistaMenu.getjDesktop().add(vistaRevision);
         ControllerRevision controladorRevision = new ControllerRevision(modeloRevision, vistaRevision);
         controladorRevision.iniciarControl();
     }
- 
+
 }

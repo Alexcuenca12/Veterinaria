@@ -84,7 +84,7 @@ public class ModelProducto extends Productos {
     public boolean crearProducto() {
 
         try {
-            sql = "INSERT INTO PRODUCTOS(id_producto,id_categoria,nombre_producto"
+            sql = "INSERT INTO PRODUCTOS(id_producto,id_categoria_p,nombre_producto"
                     + ",precio_producto,stock_producto,foto_pro)";
             sql += "VALUES(?,?,?,?,?,?)";
 
